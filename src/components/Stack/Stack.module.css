@@ -1,0 +1,17 @@
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.gap1 {
+  gap: var(--nfse-space-2);
+}
+.gap2 {
+  gap: var(--nfse-space-4);
+}
+.gap3 {
+  gap: var(--nfse-space-6);
+}
+.gap4 {
+  gap: var(--nfse-space-8);
+}

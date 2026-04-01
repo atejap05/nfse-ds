@@ -1,0 +1,9 @@
+.container {
+  width: 100%;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--nfse-space-4);
+  padding-right: var(--nfse-space-4);
+  box-sizing: border-box;
+}

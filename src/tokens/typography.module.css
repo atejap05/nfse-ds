@@ -1,0 +1,44 @@
+.h1 {
+  font-family: var(--nfse-font-sans);
+  font-size: var(--nfse-text-h1-size);
+  font-weight: var(--nfse-text-h1-weight);
+  line-height: var(--nfse-text-h1-line);
+  color: var(--nfse-color-text);
+  margin: 0;
+}
+
+.h2 {
+  font-family: var(--nfse-font-sans);
+  font-size: var(--nfse-text-h2-size);
+  font-weight: var(--nfse-text-h2-weight);
+  line-height: var(--nfse-text-h2-line);
+  color: var(--nfse-color-text);
+  margin: 0;
+}
+
+.h3 {
+  font-family: var(--nfse-font-sans);
+  font-size: var(--nfse-text-h3-size);
+  font-weight: var(--nfse-text-h3-weight);
+  line-height: var(--nfse-text-h3-line);
+  color: var(--nfse-color-text);
+  margin: 0;
+}
+
+.body {
+  font-family: var(--nfse-font-sans);
+  font-size: var(--nfse-text-body-size);
+  font-weight: var(--nfse-text-body-weight);
+  line-height: var(--nfse-text-body-line);
+  color: var(--nfse-color-text);
+  margin: 0;
+}
+
+.caption {
+  font-family: var(--nfse-font-sans);
+  font-size: var(--nfse-text-caption-size);
+  font-weight: var(--nfse-text-caption-weight);
+  line-height: var(--nfse-text-caption-line);
+  color: var(--nfse-color-text-muted);
+  margin: 0;
+}

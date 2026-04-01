@@ -1,0 +1,67 @@
+{
+  "name": "nfse-ds",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Design System React 19 — Nota Fiscal de Serviço eletrônica (NFS-e)",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./theme.css": "./dist/theme.css",
+    "./theme-fonts.css": "./dist/theme-fonts.css",
+    "./nfse-tailwind.css": "./dist/nfse-tailwind.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build": "vite build --config vite.config.lib.ts && node scripts/flatten-token-css.mjs",
+    "build-storybook": "storybook build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "typecheck": "tsc -b"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@storybook/addon-a11y": "^10.3.3",
+    "@storybook/addon-docs": "^10.3.3",
+    "@storybook/addon-vitest": "^10.3.3",
+    "@storybook/react-vite": "^10.3.3",
+    "@types/node": "^24.12.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "@vitest/browser-playwright": "^4.1.2",
+    "@vitest/coverage-v8": "^4.1.2",
+    "eslint": "^9.39.4",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "eslint-plugin-storybook": "^10.3.3",
+    "globals": "^17.4.0",
+    "playwright": "^1.59.1",
+    "prettier": "^3.8.1",
+    "storybook": "^10.3.3",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.57.0",
+    "vite": "^8.0.1",
+    "vite-plugin-dts": "^4.5.4",
+    "vite-plugin-static-copy": "^4.0.0",
+    "vitest": "^4.1.2"
+  }
+}
