@@ -12,7 +12,7 @@ Manual técnico (arquitetura, estrutura do repositório, stack, roadmap e public
 
 - Node.js 20+
 - Peer dependencies: `react` e `react-dom` **^19.0.0**
-- O pacote declara também **Radix UI** (`@radix-ui/react-dialog`, `@radix-ui/react-tabs`) e **Sonner** como dependências diretas para `Dialog`, `Tabs` e `NfseToaster` — não é necessário instalá-las em separado para usar esses componentes.
+- O pacote declara **Radix UI** (vários pacotes: dialog, tabs, tooltip, popover, dropdown-menu, accordion, collapsible, progress, slider), **Sonner** e **cmdk** como dependências diretas — o consumidor não precisa instalá-las à parte para usar os componentes que as utilizam (ver `package.json` e [docs/roadmap.md](docs/roadmap.md)).
 
 ## Desenvolvimento
 
@@ -21,7 +21,7 @@ npm install
 npm run dev
 ```
 
-Abre o Storybook em `http://localhost:6006` (componentes, página **NFS-e / Design System Overview**, addon de acessibilidade).
+Abre o Storybook em `http://localhost:6006` (componentes, **NFS-e / Design System Overview**, **NFS-e / Recipes** para composições; addon de acessibilidade). Roadmap e templates planejados: [docs/roadmap.md](docs/roadmap.md), [docs/layout-examples.md](docs/layout-examples.md).
 
 ### Scripts
 

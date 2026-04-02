@@ -10,6 +10,8 @@ Planejamento evolutivo do Design System NFS-e. A **Fase 1** (tokens, componentes
 | **Contrato Input / TextField** | Documentado em [input-textfield.md](input-textfield.md).                             |
 | **Calendário (Fase G)**        | Apenas [RFC / pré-requisitos](calendar-rfc.md) — sem componente no pacote.           |
 | **Histórico de versões**       | [CHANGELOG.md](../CHANGELOG.md).                                                     |
+| **Receitas de composição**     | Storybook **NFS-e / Recipes** + [layout-examples.md](layout-examples.md) (templates planejados). |
+| **Lista estendida (backlog DS)** | **Entregue** na biblioteca — ver [Fase H](#fase-h--lista-estendida-backlog-shadcn). Pendências: [revisão manual](#etapa-de-revisão-e-inspeção-manual) e [layouts de exemplo](#etapa-de-layouts-de-exemplo-integrados). |
 
 **Componentes já exportados pela biblioteca** (além da Fase 1: Button, TextField, TextArea, Select, Checkbox, Radio, Alert, Container, Stack, Typography):
 
@@ -17,7 +19,7 @@ Label, Separator, Input, Badge, Avatar, Card, Switch, Skeleton, Spinner, RadioGr
 
 **Dependências de UI além de React:** pacotes `@radix-ui/react-*` (dialog, tabs, tooltip, popover, dropdown-menu, accordion, collapsible, progress, slider), `sonner`, `cmdk` (declaradas no `package.json` do pacote).
 
-**Documentação auxiliar:** [z-index.md](z-index.md) (camadas), [icons.md](icons.md) (estratégia de ícones no app consumidor).
+**Documentação auxiliar:** [z-index.md](z-index.md) (camadas), [icons.md](icons.md) (estratégia de ícones no app consumidor), [layout-examples.md](layout-examples.md) (roadmap de templates de página).
 
 ---
 
@@ -112,29 +114,84 @@ Label, Separator, Input, Badge, Avatar, Card, Switch, Skeleton, Spinner, RadioGr
 
 ---
 
-## Próximos passos sugeridos (ordem)
+## Fase H — Lista estendida (backlog shadcn)
 
-1. **Qualidade e release:** concluir Fase A (a11y em massa, revisão de `exports` para 1.0, bump de versão **minor** ao adicionar componentes — ver [npm-package.md](npm-package.md)).
-2. **Testes:** estabilizar `npm run test` (Vitest/browser) em CI ou documentar requisitos de ambiente; opcionalmente adicionar `play` ou testes unitários em componentes críticos.
-3. **Backlog abaixo:** priorizar com o time do portal conforme demanda (nenhuma ordem fixa).
+**Status: entregue** no pacote (tokens de camada, componentes e receitas no Storybook).
+
+| Item | Implementação |
+| ---- | ------------- |
+| **DropdownMenu** | `@radix-ui/react-dropdown-menu` — itens, separador, label, submenu, checkbox/radio. |
+| **Select avançado** | `Combobox` (Popover + busca + lista); `Select` nativo mantido para casos simples. |
+| **Popover** | `@radix-ui/react-popover`. |
+| **Tooltip** | `@radix-ui/react-tooltip` + `TooltipProvider`. |
+| **Sheet** | Radix Dialog com conteúdo lateral (`side`). |
+| **Accordion** / **Collapsible** | Radix Accordion e Collapsible. |
+| **Progress** / **Slider** | Radix Progress e Slider. |
+| **Command** | `cmdk` com wrappers estilizados (`Command`, `CommandInput`, …). |
+| **Ícones** | Documentado em [icons.md](icons.md) (biblioteca no app consumidor; sem bundle no DS). |
+| **Camadas (z-index)** | Tokens `--nfse-z-*` em [z-index.md](z-index.md). |
+
+**Storybook — receitas atuais:** grupo **NFS-e / Recipes** (`Recipes.stories.tsx`): barra com Avatar + menu, tabela com tooltip + dropdown, sheet com Stack + Card, dialog com Combobox.
 
 ---
 
-## Lista estendida (backlog)
+## Etapa de revisão e inspeção manual
 
-Componentes e evoluções comuns em design systems tipo shadcn; entrada conforme demanda do portal:
+Objetivo: validar qualidade antes de releases (especialmente rumo a **1.0**) e após mudanças amplas no DS.
 
-| Item                            | Observação                                                                            |
-| ------------------------------- | ------------------------------------------------------------------------------------- |
-| **DropdownMenu**                | Menus de contexto / ações.                                                            |
-| **Select** avançado             | Já existe `Select` nativo; busca, async, virtualização se necessário.                 |
-| **Popover**                     | Ancoragem + foco; avaliar Radix vs. implementação leve.                               |
-| **Tooltip**                     | Acessível, atraso e posicionamento.                                                   |
-| **Sheet**                       | Gaveta lateral (mobile / painéis).                                                    |
-| **Accordion** / **Collapsible** | Conteúdo expansível.                                                                  |
-| **Progress** / **Slider**       | Indicadores e intervalos.                                                             |
-| **Command**                     | Paleta de comandos — baixa prioridade para NFS-e salvo requisito explícito.           |
-| **Ícones**                      | Conjunto oficial ou biblioteca alinhada à marca (Fase 1 menciona iconografia básica). |
+| Área | Atividades |
+| ---- | ---------- |
+| **Acessibilidade** | Storybook com addon **a11y**; contraste; foco visível; teclado (Tab, Esc, setas em menus/combobox); leitores de tela em amostragem (Dialog, Sheet, Dropdown, Combobox). |
+| **Camadas** | Confirmar ordem de sobreposição com [z-index.md](z-index.md) (toast acima de modal; dropdown/popover abaixo de modal quando aplicável). |
+| **Regressão visual** | Comparar stories antes/depois em mudanças de CSS (tokens, módulos). |
+| **Integração** | Percorrer **Recipes** e fluxos com `Dialog` + `Combobox`, `Table` + `DropdownMenu`, etc. |
+| **Checklist de componente** | Para cada novo componente: tokens `var(--nfse-*)`, story com estados, export em `src/index.ts`, entrada no [CHANGELOG](../CHANGELOG.md). |
+
+**Sugestão de registro:** registrar achados e datas em issues internas ou na descrição da release; corrigir bloqueadores antes de `minor`/`major` conforme [npm-package.md](npm-package.md).
+
+---
+
+## Etapa de layouts de exemplo (integrados)
+
+Objetivo: ir além das receitas pontuais e publicar **templates de página** que espelham uso real do portal (componentes trabalhando juntos).
+
+Escopo planejado (detalhe em [layout-examples.md](layout-examples.md)):
+
+| Entrega | Descrição |
+| ------- | --------- |
+| **Header** | Topo com identidade, ações globais, menu do usuário. |
+| **Persona / usuário** | Bloco de conta (Avatar, metadados, atalhos). |
+| **Sidebar** | Navegação vertical (Accordion/Collapsible, estado ativo). |
+| **Navbar** | Navegação principal horizontal (Tabs ou lista). |
+| **Listagem com tabela** | Table + Pagination + filtros em Card; ações por linha. |
+| **App shell** | Composição header + sidebar + conteúdo (Container, Stack). |
+
+**Onde implementar:** preferencialmente novas stories em `src/stories/` (ex.: grupo **NFS-e / Layouts** ou subpastas por template), reutilizando tokens e padrões das Recipes.
+
+**Status:** não iniciada como conjunto nomeado; Recipes já cobrem parte da integração — esta etapa consolida layouts completos e documentados.
+
+---
+
+## Próximos passos sugeridos (ordem)
+
+1. **Revisão manual:** executar a [etapa de revisão e inspeção manual](#etapa-de-revisão-e-inspeção-manual) e tratar achados críticos.
+2. **Layouts de exemplo:** implementar templates da [etapa de layouts](#etapa-de-layouts-de-exemplo-integrados) no Storybook (ver [layout-examples.md](layout-examples.md)).
+3. **Qualidade e release:** concluir Fase A (a11y em massa, revisão de `exports` para 1.0, bump de versão **minor** — ver [npm-package.md](npm-package.md)).
+4. **Testes:** estabilizar `npm run test` (Vitest/browser) em CI ou documentar requisitos de ambiente; opcionalmente testes `play` ou unitários em componentes críticos.
+5. **Fase G (Calendário):** após [RFC](calendar-rfc.md), quando priorizado.
+
+---
+
+## Backlog residual (evoluções futuras)
+
+Itens fora do escopo já entregue na lista estendida; priorizar com o time do portal:
+
+| Item | Observação |
+| ---- | ---------- |
+| **Combobox** | Evoluções: carregamento assíncrono, multi-seleção, virtualização de lista muito grande. |
+| **Command** | Integração em modal global (paleta de comandos) no app consumidor. |
+| **Ícones no DS** | Subconjunto SVG institucional no pacote, se o desenho fechar com a marca. |
+| **Calendar (Fase G)** | [calendar-rfc.md](calendar-rfc.md). |
 
 ---
 

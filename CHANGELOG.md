@@ -7,6 +7,12 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ## [Unreleased]
 
+### Documentation
+
+- [docs/roadmap.md](docs/roadmap.md): Fase H (lista estendida) marcada como entregue; novas etapas de **revisão e inspeção manual** e de **layouts de exemplo** (header, persona, sidebar, navbar, tabela, app shell); backlog residual separado.
+- [docs/layout-examples.md](docs/layout-examples.md): escopo e critérios dos templates integrados no Storybook.
+- [docs/README.md](docs/README.md): índice atualizado (z-index, icons, layout-examples).
+
 ### Added
 
 - Tokens: escala de camadas `--nfse-z-*` ([docs/z-index.md](docs/z-index.md)); `NfseToaster` e `Dialog` passam a usá-la.
