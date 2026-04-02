@@ -1,0 +1,60 @@
+.track {
+  position: relative;
+  width: 2.75rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  border: var(--nfse-border-width) solid var(--nfse-border-color);
+  background-color: var(--nfse-color-gray-light);
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.track:focus-visible {
+  outline: var(--nfse-focus-ring);
+  outline-offset: var(--nfse-focus-offset);
+}
+
+.track:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.trackOn {
+  background-color: var(--nfse-color-primary);
+  border-color: var(--nfse-color-primary);
+}
+
+.thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(1.5rem - 6px);
+  height: calc(1.5rem - 6px);
+  border-radius: 50%;
+  background-color: var(--nfse-color-white);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s ease;
+}
+
+.thumbOn {
+  transform: translateX(1.25rem);
+}
+
+.row {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--nfse-space-3);
+  font-family: var(--nfse-font-sans);
+}
+
+.label {
+  font-size: var(--nfse-text-body-size);
+  color: var(--nfse-color-text);
+  cursor: pointer;
+}
+
+.labelDisabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}

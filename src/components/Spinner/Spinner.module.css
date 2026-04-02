@@ -1,0 +1,43 @@
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--nfse-space-2);
+  font-family: var(--nfse-font-sans);
+  font-size: var(--nfse-text-caption-size);
+  color: var(--nfse-color-text-muted);
+}
+
+.svg {
+  flex-shrink: 0;
+  animation: nfse-spin 0.75s linear infinite;
+}
+
+.sm {
+  width: 1rem;
+  height: 1rem;
+}
+
+.md {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.lg {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.block {
+  display: flex;
+  width: 100%;
+  min-height: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes nfse-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

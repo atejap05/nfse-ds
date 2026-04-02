@@ -25,4 +25,6 @@ Este diretório reúne a **documentação técnica** do repositório: arquitetur
 
 ## Documentos relacionados
 
-- [Requisitos do produto (Fase 1)](../product-requirements.md) — escopo formal do DS no portal NFS-e.
+- [Requisitos do produto (Fase 1)](product-requirements.md) — escopo formal do DS no portal NFS-e.
+- [Input e TextField — contrato de API](input-textfield.md) — quando usar `Input` vs `TextField`.
+- [RFC — Calendar (Fase G)](calendar-rfc.md) — pré-requisitos antes de implementar calendário.

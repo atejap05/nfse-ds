@@ -1,5 +1,6 @@
 import { type TextareaHTMLAttributes, useId } from 'react';
 import { cn } from '../../utils/cn';
+import { Label } from '../Label/Label';
 import styles from './TextArea.module.css';
 
 export interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
@@ -7,6 +8,7 @@ export interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElemen
   hint?: string;
   error?: boolean;
   success?: boolean;
+  required?: boolean;
 }
 
 export function TextArea({
@@ -17,6 +19,7 @@ export function TextArea({
   id: idProp,
   className,
   disabled,
+  required,
   ...props
 }: TextAreaProps) {
   const uid = useId();
@@ -25,9 +28,9 @@ export function TextArea({
 
   return (
     <div className={styles.wrapper}>
-      <label className={styles.label} htmlFor={id}>
+      <Label htmlFor={id} required={required}>
         {label}
-      </label>
+      </Label>
       <textarea
         id={id}
         className={cn(
@@ -37,6 +40,7 @@ export function TextArea({
           className,
         )}
         disabled={disabled}
+        required={required}
         aria-invalid={error ? true : undefined}
         aria-describedby={hintId}
         {...props}

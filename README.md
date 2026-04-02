@@ -12,6 +12,7 @@ Manual técnico (arquitetura, estrutura do repositório, stack, roadmap e public
 
 - Node.js 20+
 - Peer dependencies: `react` e `react-dom` **^19.0.0**
+- O pacote declara também **Radix UI** (`@radix-ui/react-dialog`, `@radix-ui/react-tabs`) e **Sonner** como dependências diretas para `Dialog`, `Tabs` e `NfseToaster` — não é necessário instalá-las em separado para usar esses componentes.
 
 ## Desenvolvimento
 

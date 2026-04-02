@@ -58,6 +58,7 @@ Consumidores TypeScript resolvem tipos via `types`/`exports`.
 
 ## Versionamento e changelog
 
+- O histórico de versões é mantido em **[CHANGELOG.md](../CHANGELOG.md)** no formato Keep a Changelog.
 - **Patch** (`x.y.z+1`): correções compatíveis (bugs, a11y sem quebra de API).
 - **Minor** (`x.y+1.0`): novos componentes ou props opcionais.
 - **Major** (`x+1.0.0`): mudanças incompatíveis (remoção de export, rename de props).

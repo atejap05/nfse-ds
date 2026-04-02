@@ -1,0 +1,38 @@
+/* Sobrescreve tokens Sonner com variáveis NFS-e via :global quando classNames são aplicados */
+
+.toast {
+  font-family: var(--nfse-font-sans) !important;
+  font-size: var(--nfse-text-body-size) !important;
+  border-radius: var(--nfse-radius-md) !important;
+  border: var(--nfse-border-width) solid var(--nfse-border-color) !important;
+  box-shadow: 0 0.5rem 1.25rem rgba(26, 59, 126, 0.12) !important;
+}
+
+.title {
+  font-weight: 600 !important;
+  color: var(--nfse-color-text) !important;
+}
+
+.description {
+  color: var(--nfse-color-text-muted) !important;
+}
+
+.successToast {
+  border-color: rgba(10, 122, 63, 0.35) !important;
+  background-color: var(--nfse-color-success-bg) !important;
+}
+
+.errorToast {
+  border-color: rgba(198, 40, 40, 0.35) !important;
+  background-color: var(--nfse-color-error-bg) !important;
+}
+
+.warningToast {
+  border-color: rgba(184, 134, 11, 0.35) !important;
+  background-color: var(--nfse-color-warning-bg) !important;
+}
+
+.infoToast {
+  border-color: rgba(26, 59, 126, 0.35) !important;
+  background-color: var(--nfse-color-info-bg) !important;
+}

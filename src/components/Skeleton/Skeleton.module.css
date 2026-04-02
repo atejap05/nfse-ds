@@ -1,0 +1,38 @@
+.skeleton {
+  display: block;
+  background-color: var(--nfse-color-gray-light);
+  border-radius: var(--nfse-radius-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 100%
+  );
+  animation: nfse-shimmer 1.2s ease-in-out infinite;
+}
+
+@keyframes nfse-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.text {
+  height: 1em;
+  width: 100%;
+}
+
+.circular {
+  border-radius: 50%;
+}

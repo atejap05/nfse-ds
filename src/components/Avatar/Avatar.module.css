@@ -1,0 +1,48 @@
+.root {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--nfse-color-white);
+  border: var(--nfse-border-width) solid var(--nfse-border-color);
+  font-family: var(--nfse-font-sans);
+  font-weight: 500;
+  color: var(--nfse-color-navy);
+  user-select: none;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sm {
+  width: 2rem;
+  height: 2rem;
+  font-size: 0.75rem;
+}
+
+.md {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 0.875rem;
+}
+
+.lg {
+  width: 3rem;
+  height: 3rem;
+  font-size: 1rem;
+}
+
+.fallback {
+  background-color: var(--nfse-color-info-bg);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,27 @@
+.label {
+  font-family: var(--nfse-font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--nfse-color-text);
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--nfse-space-1);
+  flex-wrap: wrap;
+}
+
+.required {
+  color: var(--nfse-color-error);
+  font-weight: 600;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

@@ -1,0 +1,50 @@
+.captionHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.wrapper {
+  width: 100%;
+  overflow-x: auto;
+  font-family: var(--nfse-font-sans);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--nfse-text-body-size);
+  line-height: var(--nfse-text-body-line);
+  color: var(--nfse-color-text);
+  border: var(--nfse-border-width) solid var(--nfse-border-color);
+  border-radius: var(--nfse-radius-md);
+  overflow: hidden;
+}
+
+.th {
+  text-align: left;
+  font-weight: 600;
+  padding: var(--nfse-space-3) var(--nfse-space-4);
+  background-color: rgba(26, 59, 126, 0.08);
+  color: var(--nfse-color-navy);
+  border-bottom: var(--nfse-border-width) solid var(--nfse-border-color);
+}
+
+.td {
+  padding: var(--nfse-space-3) var(--nfse-space-4);
+  border-bottom: var(--nfse-border-width) solid var(--nfse-border-color);
+}
+
+.tr:last-child .td {
+  border-bottom: none;
+}
+
+.zebra tbody tr:nth-child(even) .td {
+  background-color: rgba(224, 224, 224, 0.35);
+}

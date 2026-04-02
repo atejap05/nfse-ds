@@ -1,0 +1,19 @@
+.root {
+  border: none;
+  margin: 0;
+  flex-shrink: 0;
+  background-color: var(--nfse-border-color);
+}
+
+.horizontal {
+  width: 100%;
+  height: var(--nfse-border-width);
+  min-height: var(--nfse-border-width);
+}
+
+.vertical {
+  width: var(--nfse-border-width);
+  min-width: var(--nfse-border-width);
+  align-self: stretch;
+  min-height: 1.5rem;
+}

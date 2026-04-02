@@ -1,5 +1,7 @@
 import { type InputHTMLAttributes, useId } from 'react';
 import { cn } from '../../utils/cn';
+import { Input } from '../Input/Input';
+import { Label } from '../Label/Label';
 import styles from './TextField.module.css';
 
 export interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -7,6 +9,8 @@ export interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   hint?: string;
   error?: boolean;
   success?: boolean;
+  /** Indicador de campo obrigatório no label */
+  required?: boolean;
 }
 
 export function TextField({
@@ -17,6 +21,7 @@ export function TextField({
   id: idProp,
   className,
   disabled,
+  required,
   ...props
 }: TextFieldProps) {
   const uid = useId();
@@ -25,19 +30,16 @@ export function TextField({
 
   return (
     <div className={styles.wrapper}>
-      <label className={styles.label} htmlFor={id}>
+      <Label htmlFor={id} required={required}>
         {label}
-      </label>
-      <input
+      </Label>
+      <Input
         id={id}
-        className={cn(
-          styles.input,
-          error && styles.inputError,
-          success && styles.inputSuccess,
-          className,
-        )}
+        className={className}
         disabled={disabled}
-        aria-invalid={error ? true : undefined}
+        required={required}
+        error={error}
+        success={success}
         aria-describedby={hintId}
         {...props}
       />
