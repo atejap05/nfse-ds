@@ -1,0 +1,39 @@
+.trigger {
+  display: inline-flex;
+}
+
+.content {
+  z-index: var(--nfse-z-popover);
+  width: min(90vw, 20rem);
+  max-height: min(70vh, 24rem);
+  overflow: auto;
+  padding: var(--nfse-space-4);
+  border-radius: var(--nfse-radius-lg);
+  border: var(--nfse-border-width) solid var(--nfse-border-color);
+  background-color: var(--nfse-color-white);
+  box-shadow: 0 0.5rem 1.25rem rgba(26, 59, 126, 0.12);
+  font-family: var(--nfse-font-sans);
+  font-size: var(--nfse-text-body-size);
+  line-height: var(--nfse-text-body-line);
+  color: var(--nfse-color-text);
+}
+
+.content[data-state='open'] {
+  animation: nfse-popover-in 0.15s ease-out;
+}
+
+@keyframes nfse-popover-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.content:focus-visible {
+  outline: var(--nfse-focus-ring);
+  outline-offset: var(--nfse-focus-offset);
+}

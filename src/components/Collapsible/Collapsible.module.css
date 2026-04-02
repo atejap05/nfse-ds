@@ -1,0 +1,9 @@
+.trigger {
+  font: inherit;
+  text-align: left;
+  width: 100%;
+}
+
+.content {
+  overflow: hidden;
+}

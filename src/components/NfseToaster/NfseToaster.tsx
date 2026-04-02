@@ -1,4 +1,4 @@
-import { Toaster, toast } from 'sonner';
+import { Toaster } from 'sonner';
 import styles from './NfseToaster.module.css';
 
 export interface NfseToasterProps {
@@ -10,6 +10,7 @@ export function NfseToaster({ position = 'bottom-right' }: NfseToasterProps) {
     <Toaster
       position={position}
       closeButton
+      style={{ zIndex: 'var(--nfse-z-toast)' }}
       toastOptions={{
         classNames: {
           toast: styles.toast,
@@ -24,5 +25,3 @@ export function NfseToaster({ position = 'bottom-right' }: NfseToasterProps) {
     />
   );
 }
-
-export { toast };

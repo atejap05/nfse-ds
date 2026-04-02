@@ -70,4 +70,17 @@
   /* Foco (acessibilidade) */
   --nfse-focus-ring: 2px solid var(--nfse-color-navy);
   --nfse-focus-offset: 2px;
+
+  /*
+   * Camadas (z-index) — ordem única para overlays e composição.
+   * Ver docs/z-index.md
+   */
+  --nfse-z-base: 0;
+  --nfse-z-sticky: 10;
+  --nfse-z-dropdown: 1000;
+  --nfse-z-popover: 1010;
+  --nfse-z-tooltip: 1020;
+  --nfse-z-overlay: 1100;
+  --nfse-z-modal: 1101;
+  --nfse-z-toast: 1200;
 }

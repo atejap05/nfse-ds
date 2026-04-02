@@ -1,0 +1,34 @@
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--nfse-space-4);
+  padding: var(--nfse-space-4) var(--nfse-space-6);
+  border-bottom: var(--nfse-border-width) solid var(--nfse-border-color);
+  background: var(--nfse-color-white);
+}
+
+.avatarTrigger {
+  display: inline-flex;
+  padding: 0;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.avatarTrigger:focus-visible {
+  outline: var(--nfse-focus-ring);
+  outline-offset: var(--nfse-focus-offset);
+}
+
+.pad {
+  padding: var(--nfse-space-6);
+}
+
+.rowActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--nfse-space-2);
+}

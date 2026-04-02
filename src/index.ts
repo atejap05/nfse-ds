@@ -47,9 +47,114 @@ export {
   type DialogProps,
   type DialogTriggerProps,
   type DialogContentProps,
+  type DialogCloseProps,
 } from './components/Dialog/Dialog';
 
 export { Table, type TableProps, type TableColumn } from './components/Table/Table';
 export { Pagination, type PaginationProps } from './components/Pagination/Pagination';
 
-export { NfseToaster, toast, type NfseToasterProps } from './components/NfseToaster/NfseToaster';
+export { NfseToaster, type NfseToasterProps } from './components/NfseToaster/NfseToaster';
+export { toast } from './toast';
+
+export {
+  TooltipProvider,
+  type TooltipProviderProps,
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+  type TooltipProps,
+  type TooltipTriggerProps,
+  type TooltipContentProps,
+} from './components/Tooltip/Tooltip';
+
+export {
+  Popover,
+  PopoverTrigger,
+  PopoverAnchor,
+  PopoverContent,
+  type PopoverProps,
+  type PopoverTriggerProps,
+  type PopoverAnchorProps,
+  type PopoverContentProps,
+} from './components/Popover/Popover';
+
+export {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuCheckboxItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuGroup,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSub,
+  DropdownMenuSubTrigger,
+  DropdownMenuSubContent,
+  type DropdownMenuProps,
+  type DropdownMenuTriggerProps,
+  type DropdownMenuContentProps,
+  type DropdownMenuItemProps,
+  type DropdownMenuCheckboxItemProps,
+  type DropdownMenuLabelProps,
+  type DropdownMenuSeparatorProps,
+  type DropdownMenuRadioItemProps,
+  type DropdownMenuSubTriggerProps,
+  type DropdownMenuSubContentProps,
+} from './components/DropdownMenu/DropdownMenu';
+
+export {
+  Sheet,
+  SheetTrigger,
+  SheetClose,
+  SheetContent,
+  type SheetProps,
+  type SheetTriggerProps,
+  type SheetContentProps,
+  type SheetSide,
+  type SheetCloseProps,
+} from './components/Sheet/Sheet';
+
+export {
+  Collapsible,
+  CollapsibleTrigger,
+  CollapsibleContent,
+  type CollapsibleProps,
+  type CollapsibleTriggerProps,
+  type CollapsibleContentProps,
+} from './components/Collapsible/Collapsible';
+
+export {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+  type AccordionProps,
+  type AccordionItemProps,
+  type AccordionTriggerProps,
+  type AccordionContentProps,
+} from './components/Accordion/Accordion';
+
+export { Progress, type ProgressProps } from './components/Progress/Progress';
+
+export { Slider, type SliderProps } from './components/Slider/Slider';
+
+export { Combobox, type ComboboxProps, type ComboboxOption } from './components/Combobox/Combobox';
+
+export {
+  Command,
+  CommandInput,
+  CommandList,
+  CommandEmpty,
+  CommandGroup,
+  CommandItem,
+  CommandSeparator,
+  type CommandSeparatorProps,
+  type CommandProps,
+  type CommandInputProps,
+  type CommandListProps,
+  type CommandEmptyProps,
+  type CommandGroupProps,
+  type CommandItemProps,
+} from './components/Command/Command';

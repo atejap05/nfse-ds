@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from '../Button/Button';
-import { NfseToaster, toast } from './NfseToaster';
+import { toast } from '../../toast';
+import { NfseToaster } from './NfseToaster';
 
 const meta = {
   title: 'Componentes/NfseToaster',

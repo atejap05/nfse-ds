@@ -1,0 +1,40 @@
+.root {
+  position: relative;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  touch-action: none;
+  width: 100%;
+  height: 1.25rem;
+}
+
+.track {
+  position: relative;
+  flex-grow: 1;
+  height: 0.375rem;
+  border-radius: var(--nfse-radius-md);
+  background-color: var(--nfse-color-gray-light);
+}
+
+.range {
+  position: absolute;
+  height: 100%;
+  border-radius: inherit;
+  background-color: var(--nfse-color-primary);
+}
+
+.thumb {
+  display: block;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 50%;
+  border: 2px solid var(--nfse-color-white);
+  background-color: var(--nfse-color-navy);
+  box-shadow: 0 1px 2px rgba(26, 59, 126, 0.2);
+  cursor: pointer;
+}
+
+.thumb:focus-visible {
+  outline: var(--nfse-focus-ring);
+  outline-offset: var(--nfse-focus-offset);
+}

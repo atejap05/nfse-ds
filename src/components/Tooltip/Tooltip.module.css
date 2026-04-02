@@ -1,0 +1,39 @@
+.trigger {
+  display: inline-flex;
+}
+
+.content {
+  z-index: var(--nfse-z-tooltip);
+  max-width: min(20rem, 90vw);
+  padding: var(--nfse-space-2) var(--nfse-space-3);
+  border-radius: var(--nfse-radius-md);
+  border: var(--nfse-border-width) solid var(--nfse-border-color);
+  background-color: var(--nfse-color-white);
+  box-shadow: 0 0.25rem 0.75rem rgba(26, 59, 126, 0.12);
+  font-family: var(--nfse-font-sans);
+  font-size: var(--nfse-text-caption-size);
+  font-weight: var(--nfse-text-caption-weight);
+  line-height: var(--nfse-text-caption-line);
+  color: var(--nfse-color-text);
+}
+
+.content[data-state='delayed-open'],
+.content[data-state='instant-open'] {
+  animation: nfse-tooltip-in 0.15s ease-out;
+}
+
+@keyframes nfse-tooltip-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.content:focus-visible {
+  outline: var(--nfse-focus-ring);
+  outline-offset: var(--nfse-focus-offset);
+}

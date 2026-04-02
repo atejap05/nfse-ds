@@ -1,0 +1,118 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nfse-space-2);
+  width: 100%;
+  max-width: 24rem;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--nfse-space-2);
+  width: 100%;
+  min-height: 2.5rem;
+  padding: var(--nfse-space-2) var(--nfse-space-3);
+  border-radius: var(--nfse-radius-md);
+  border: var(--nfse-border-width) solid var(--nfse-border-color);
+  background-color: var(--nfse-color-white);
+  font-family: var(--nfse-font-sans);
+  font-size: var(--nfse-text-body-size);
+  color: var(--nfse-color-text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.trigger:hover:not(:disabled) {
+  border-color: var(--nfse-color-navy);
+}
+
+.trigger:focus-visible {
+  outline: var(--nfse-focus-ring);
+  outline-offset: var(--nfse-focus-offset);
+}
+
+.trigger:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.triggerError {
+  border-color: var(--nfse-color-error);
+}
+
+.placeholder {
+  color: var(--nfse-color-text-muted);
+}
+
+.chevron {
+  flex-shrink: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 2px solid var(--nfse-color-text-muted);
+  border-bottom: 2px solid var(--nfse-color-text-muted);
+  transform: rotate(45deg);
+  margin-top: -0.15rem;
+}
+
+.popover {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nfse-space-2);
+  box-sizing: border-box;
+  width: var(--radix-popover-trigger-width, min(90vw, 24rem));
+  max-width: none;
+  padding: var(--nfse-space-3);
+}
+
+.search {
+  width: 100%;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-height: 12rem;
+  overflow: auto;
+}
+
+.option {
+  display: block;
+  width: 100%;
+  padding: var(--nfse-space-2) var(--nfse-space-3);
+  border: none;
+  border-radius: var(--nfse-radius-sm);
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  color: var(--nfse-color-text);
+  cursor: pointer;
+}
+
+.option:hover,
+.option:focus-visible {
+  background-color: rgba(26, 59, 126, 0.08);
+  outline: none;
+}
+
+.optionSelected {
+  font-weight: 600;
+  color: var(--nfse-color-navy);
+}
+
+.empty {
+  padding: var(--nfse-space-3);
+  font-size: var(--nfse-text-caption-size);
+  color: var(--nfse-color-text-muted);
+}
+
+.hint {
+  font-size: var(--nfse-text-caption-size);
+  color: var(--nfse-color-text-muted);
+}
+
+.hintError {
+  color: var(--nfse-color-error);
+}

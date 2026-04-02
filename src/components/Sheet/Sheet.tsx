@@ -1,45 +1,63 @@
 import * as DialogPrimitive from '@radix-ui/react-dialog';
-import { type ReactNode } from 'react';
+import { type ComponentPropsWithoutRef, type ReactNode } from 'react';
 import { cn } from '../../utils/cn';
-import styles from './Dialog.module.css';
+import styles from './Sheet.module.css';
 
-export interface DialogProps extends DialogPrimitive.DialogProps {
+export interface SheetProps extends DialogPrimitive.DialogProps {
   children: ReactNode;
 }
 
-export function Dialog(props: DialogProps) {
+export function Sheet(props: SheetProps) {
   return <DialogPrimitive.Root {...props} />;
 }
 
-export interface DialogTriggerProps extends DialogPrimitive.DialogTriggerProps {
+export interface SheetTriggerProps extends DialogPrimitive.DialogTriggerProps {
   className?: string;
 }
 
-export function DialogTrigger({ className, ...props }: DialogTriggerProps) {
+export function SheetTrigger({ className, ...props }: SheetTriggerProps) {
   return <DialogPrimitive.Trigger className={className} {...props} />;
 }
 
-export interface DialogContentProps extends Omit<DialogPrimitive.DialogContentProps, 'title' | 'children'> {
+export type SheetCloseProps = ComponentPropsWithoutRef<typeof DialogPrimitive.Close>;
+
+export function SheetClose(props: SheetCloseProps) {
+  return <DialogPrimitive.Close {...props} />;
+}
+
+export type SheetSide = 'top' | 'right' | 'bottom' | 'left';
+
+const sideClass: Record<SheetSide, string> = {
+  top: styles.sideTop,
+  right: styles.sideRight,
+  bottom: styles.sideBottom,
+  left: styles.sideLeft,
+};
+
+export interface SheetContentProps extends Omit<DialogPrimitive.DialogContentProps, 'title' | 'children'> {
+  /** Título visível e para leitores de tela. */
   title: string;
   description?: string;
+  side?: SheetSide;
   children: ReactNode;
   footer?: ReactNode;
   showClose?: boolean;
 }
 
-export function DialogContent({
+export function SheetContent({
   title,
   description,
+  side = 'right',
   children,
   footer,
   showClose = true,
   className,
   ...props
-}: DialogContentProps) {
+}: SheetContentProps) {
   return (
     <DialogPrimitive.Portal>
       <DialogPrimitive.Overlay className={styles.overlay} />
-      <DialogPrimitive.Content className={cn(styles.content, className)} {...props}>
+      <DialogPrimitive.Content className={cn(styles.content, sideClass[side], className)} {...props}>
         <div className={styles.header}>
           <DialogPrimitive.Title className={styles.title}>{title}</DialogPrimitive.Title>
           {showClose ? (
@@ -61,12 +79,4 @@ export function DialogContent({
       </DialogPrimitive.Content>
     </DialogPrimitive.Portal>
   );
-}
-
-export interface DialogCloseProps extends DialogPrimitive.DialogCloseProps {
-  className?: string;
-}
-
-export function DialogClose({ className, ...props }: DialogCloseProps) {
-  return <DialogPrimitive.Close className={className} {...props} />;
 }

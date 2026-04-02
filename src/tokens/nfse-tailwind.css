@@ -33,4 +33,13 @@
   --radius-nfse-sm: 4px;
   --radius-nfse-md: 8px;
   --radius-nfse-lg: 12px;
+
+  --z-nfse-base: var(--nfse-z-base);
+  --z-nfse-sticky: var(--nfse-z-sticky);
+  --z-nfse-dropdown: var(--nfse-z-dropdown);
+  --z-nfse-popover: var(--nfse-z-popover);
+  --z-nfse-tooltip: var(--nfse-z-tooltip);
+  --z-nfse-overlay: var(--nfse-z-overlay);
+  --z-nfse-modal: var(--nfse-z-modal);
+  --z-nfse-toast: var(--nfse-z-toast);
 }

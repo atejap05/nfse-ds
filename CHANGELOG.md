@@ -9,9 +9,12 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ### Added
 
+- Tokens: escala de camadas `--nfse-z-*` ([docs/z-index.md](docs/z-index.md)); `NfseToaster` e `Dialog` passam a usá-la.
 - Componentes: `Label`, `Separator`, `Input`, `Badge`, `Avatar`, `Card`, `Switch`, `Skeleton`, `Spinner`, `RadioGroup`, `CheckboxGroup`, `Tabs` (Radix), `Dialog` (Radix), `Table`, `Pagination`, `NfseToaster` (Sonner + tema NFS-e).
-- Documentação: [docs/input-textfield.md](docs/input-textfield.md), [docs/calendar-rfc.md](docs/calendar-rfc.md).
-- Dependências: `@radix-ui/react-dialog`, `@radix-ui/react-tabs`, `sonner`.
+- Componentes (backlog): `Tooltip`, `Popover`, `DropdownMenu`, `Sheet`, `Collapsible`, `Accordion`, `Progress`, `Slider`, `Combobox` (busca sobre lista), `Command` (cmdk + tema NFS-e).
+- Storybook: receitas em `NFS-e/Recipes` (composição entre componentes).
+- Documentação: [docs/input-textfield.md](docs/input-textfield.md), [docs/calendar-rfc.md](docs/calendar-rfc.md), [docs/icons.md](docs/icons.md).
+- Dependências: `@radix-ui/react-dialog`, `@radix-ui/react-tabs`, `@radix-ui/react-tooltip`, `@radix-ui/react-popover`, `@radix-ui/react-dropdown-menu`, `@radix-ui/react-accordion`, `@radix-ui/react-collapsible`, `@radix-ui/react-progress`, `@radix-ui/react-slider`, `sonner`, `cmdk`.
 
 ## [0.1.0] - 2026-04-01
 
