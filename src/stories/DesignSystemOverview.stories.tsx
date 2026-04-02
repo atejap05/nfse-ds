@@ -96,8 +96,8 @@ export const Overview: Story = {
                 Tipografia (Roboto)
               </Typography>
               <Stack gap="md">
-                <Typography variant="h1">H1 — Roboto Bold 36px</Typography>
-                <Typography variant="h2">H2 — Roboto Medium 28px</Typography>
+                <Typography variant="h1">H1 — Roboto Bold (cor heading)</Typography>
+                <Typography variant="h2">H2 — Roboto Medium (cor heading)</Typography>
                 <Typography variant="h3">H3 — Roboto Regular 24px</Typography>
                 <Typography variant="body">Corpo — Roboto Regular 16px</Typography>
                 <Typography variant="caption">Legenda — Roboto Light 14px</Typography>

@@ -24,6 +24,7 @@ Stack e práticas adotadas no `nfse-ds`.
 | Ferramenta | Uso |
 |------------|-----|
 | **Storybook 10** | `@storybook/react-vite`, addons **docs** e **a11y**, integração **Vitest** para testes a partir de stories. |
+| **Guia de documentação** | [storybook-documentation.md](storybook-documentation.md) — modelo de portal (Autodocs, texto explicativo, MDX). |
 | **Vitest** | `npm run test` — execução dos testes configurados no ecossistema Storybook/Vite. |
 
 ## Estilos

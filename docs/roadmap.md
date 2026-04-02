@@ -168,17 +168,20 @@ Escopo planejado (detalhe em [layout-examples.md](layout-examples.md)):
 
 **Onde implementar:** preferencialmente novas stories em `src/stories/` (ex.: grupo **NFS-e / Layouts** ou subpastas por template), reutilizando tokens e padrões das Recipes.
 
-**Status:** em andamento — **Header** e **Persona** entregues como componentes (`src/components/Header/`, `src/components/Persona/`) com stories em **NFS-e / Layouts**; demais templates (sidebar, navbar, tabela, app shell) pendentes. Recipes continuam cobrindo parte da integração pontual.
+**Status:** em andamento — **Header**, **Persona** e **Sidebar** entregues; **app shell** (header + sidebar + main) disponível em **NFS-e / Layouts** com alinhamento do header à coluna de conteúdo (ver [layout-examples.md](layout-examples.md)). Pendentes: navbar, tabela completa, refinamentos adicionais. Recipes continuam cobrindo integração pontual.
 
 ---
 
 ## Próximos passos sugeridos (ordem)
 
-1. **Revisão manual:** executar a [etapa de revisão e inspeção manual](#etapa-de-revisão-e-inspeção-manual) e tratar achados críticos.
-2. **Layouts de exemplo:** implementar templates da [etapa de layouts](#etapa-de-layouts-de-exemplo-integrados) no Storybook (ver [layout-examples.md](layout-examples.md)).
-3. **Qualidade e release:** concluir Fase A (a11y em massa, revisão de `exports` para 1.0, bump de versão **minor** — ver [npm-package.md](npm-package.md)).
-4. **Testes:** estabilizar `npm run test` (Vitest/browser) em CI ou documentar requisitos de ambiente; opcionalmente testes `play` ou unitários em componentes críticos.
-5. **Fase G (Calendário):** após [RFC](calendar-rfc.md), quando priorizado.
+1. **Documentação rica no Storybook:** tornar o Storybook um portal informativo (props, integração, boas práticas), no espírito de referências como o [Fluent UI Storybook](https://storybooks.fluentui.dev/react/?path=/docs/concepts-introduction--docs). Guia operacional em [storybook-documentation.md](storybook-documentation.md); aplicar padrões (Autodocs, descrições, histórias nomeadas) nos componentes prioritários.
+2. **Header alinhado ao layout com Sidebar:** o `HeaderInner` não deve centrar o conteúdo na viewport inteira quando existe coluna lateral — o bloco do cabeçalho deve partilhar a mesma coluna que a área principal (grelha ou composição documentada). Ver story **App shell — Header + Sidebar + main** em [Layouts.stories.tsx](../src/stories/Layouts.stories.tsx) e [layout-examples.md](layout-examples.md).
+3. **Expressão visual (tokens + skill frontend-design):** reduzir monotonia mantendo paleta institucional — títulos com cor semântica dedicada (ex.: token `--nfse-color-heading`); validar contraste e addon a11y; usar a skill **frontend-design** como referência de qualidade em alterações de UI.
+4. **Revisão manual:** executar a [etapa de revisão e inspeção manual](#etapa-de-revisão-e-inspeção-manual) e tratar achados críticos.
+5. **Layouts de exemplo:** completar templates da [etapa de layouts](#etapa-de-layouts-de-exemplo-integrados) no Storybook além do shell já corrigido (ver [layout-examples.md](layout-examples.md)).
+6. **Qualidade e release:** concluir Fase A (a11y em massa, revisão de `exports` para 1.0, bump de versão **minor** — ver [npm-package.md](npm-package.md)).
+7. **Testes:** estabilizar `npm run test` (Vitest/browser) em CI ou documentar requisitos de ambiente; opcionalmente testes `play` ou unitários em componentes críticos.
+8. **Fase G (Calendário):** após [RFC](calendar-rfc.md), quando priorizado.
 
 ---
 

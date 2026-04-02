@@ -19,7 +19,8 @@ Objetivo: oferecer no **Storybook** páginas ou stories de **nível de aplicaç�
 - **NFS-e / Layouts** (`src/stories/Layouts.stories.tsx`): templates nomeados; o **Header** usa o componente composto exportado pelo pacote (`Header`, `HeaderInner`, … em `src/components/Header/`), com playground em **Components/Header** no Storybook.
 - **Persona** (`src/components/Persona/`): `Avatar` + nome + descrição opcional; playground em **Components/Persona**; em **NFS-e / Layouts**, exemplos de **Header** com Persona no menu (barra superior).
 - Esta etapa **amplia** para layouts mais completos e nomeados, reutilizando os mesmos princípios ([z-index.md](z-index.md), tokens, a11y).
-- Largura da coluna de página: `Container` e `HeaderInner` compartilham o token `--nfse-layout-max-width` em `theme.css` para manter o cabeçalho alinhado ao conteúdo principal.
+- Largura da coluna de página: `Container` e `HeaderInner` compartilham o token `--nfse-layout-max-width` em `theme.css` para manter o cabeçalho alinhado ao conteúdo principal **na mesma coluna**.
+- **App shell com Sidebar:** não colocar o `Header` acima de uma faixa full-bleed e a sidebar numa linha abaixo sem grelha — o conteúdo do `HeaderInner` ficaria centrado na viewport e desalinhado do `main`. O padrão recomendado é **grelha de duas colunas** (`--nfse-sidebar-width` + `1fr`): a sidebar na primeira coluna (altura total); na segunda, **stack vertical** com `Header` e `main`, ambos limitados ao mesmo eixo horizontal. A story **App shell — Header + Sidebar + main** em `src/stories/Layouts.stories.tsx` segue este padrão (classes `appShell`, `appShellSidebar`, `appShellMainColumn`, `appShellMain`).
 
 ## Critérios de pronto (por template)
 

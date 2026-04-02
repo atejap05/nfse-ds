@@ -187,6 +187,31 @@ export {
 } from './components/Header/Header';
 
 export {
+  Sidebar,
+  SidebarHeader,
+  SidebarNav,
+  SidebarItemIcon,
+  SidebarGroup,
+  SidebarGroupTrigger,
+  SidebarGroupContent,
+  SidebarGroupItem,
+  SidebarItem,
+  type SidebarProps,
+  type SidebarHeaderProps,
+  type SidebarNavProps,
+  type SidebarItemIconProps,
+  type SidebarGroupProps,
+  type SidebarGroupTriggerProps,
+  type SidebarGroupContentProps,
+  type SidebarGroupItemProps,
+  type SidebarItemProps,
+  type SidebarItemBaseProps,
+  type SidebarDensityName,
+  type SidebarItemSelectData,
+  type SidebarCategoryToggleData,
+} from './components/Sidebar/Sidebar';
+
+export {
   Persona,
   PersonaAvatar,
   PersonaText,

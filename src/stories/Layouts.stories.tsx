@@ -30,6 +30,17 @@ import {
   PersonaText,
 } from '../components/Persona/Persona';
 import { Sheet, SheetClose, SheetContent, SheetTrigger } from '../components/Sheet/Sheet';
+import {
+  Sidebar,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupItem,
+  SidebarGroupTrigger,
+  SidebarHeader,
+  SidebarItem,
+  SidebarNav,
+} from '../components/Sidebar/Sidebar';
+import { Typography } from '../components/Typography/Typography';
 import layoutsStyles from './Layouts.module.css';
 
 type HeaderActionsVariant = 'avatarMenu' | 'personaMenu';
@@ -231,5 +242,57 @@ export const HeaderViewportMobile: Story = {
   },
   render: () => (
     <div className={layoutsStyles.viewportMobile375}>{buildHeaderExample({ actions: 'personaMenu' })}</div>
+  ),
+};
+
+/** Cabeçalho + coluna lateral (Sidebar) + área principal: grelha para o header alinhar à coluna do `main`. */
+export const AppShellComSidebar: Story = {
+  name: 'App shell — Header + Sidebar + main',
+  render: () => (
+    <div className={layoutsStyles.appShell}>
+      <div className={layoutsStyles.appShellSidebar}>
+        <Sidebar defaultSelectedValue="inicio" defaultOpenCategories={['doc']} selectedCategoryValue="doc">
+          <SidebarHeader>
+            <Typography variant="caption" style={{ color: 'var(--nfse-color-text-muted)' }}>
+              Navegação
+            </Typography>
+          </SidebarHeader>
+          <SidebarNav aria-label="Secções do portal">
+            <SidebarItem value="inicio" href="#inicio">
+              Início
+            </SidebarItem>
+            <SidebarGroup value="doc">
+              <SidebarGroupTrigger>Documentação</SidebarGroupTrigger>
+              <SidebarGroupContent>
+                <SidebarGroupItem>
+                  <SidebarItem value="guias" href="#guias">
+                    Guias
+                  </SidebarItem>
+                </SidebarGroupItem>
+                <SidebarGroupItem>
+                  <SidebarItem value="api" href="#api">
+                    API
+                  </SidebarItem>
+                </SidebarGroupItem>
+              </SidebarGroupContent>
+            </SidebarGroup>
+            <SidebarItem value="conta" href="#conta">
+              Conta
+            </SidebarItem>
+          </SidebarNav>
+        </Sidebar>
+      </div>
+      <div className={layoutsStyles.appShellMainColumn}>
+        {buildHeaderExample({})}
+        <main className={layoutsStyles.appShellMain}>
+          <p>
+            O <code>Header</code> está na mesma coluna que esta área: o <code>HeaderInner</code> partilha o
+            mesmo <code>max-width</code> e gutters que o conteúdo principal (em vez de centrar na viewport
+            inteira com a sidebar à esquerda).
+          </p>
+          <p>Role ou redimensione para validar o shell em diferentes larguras.</p>
+        </main>
+      </div>
+    </div>
   ),
 };

@@ -1,0 +1,32 @@
+---
+description: CSS — tokens, mobile first e responsivo no nfse-ds
+globs:
+  - src/**/*.module.css
+  - src/App.css
+  - src/index.css
+alwaysApply: false
+---
+
+# CSS, tokens e responsividade
+
+## Design tokens (obrigatório)
+
+- **Não** usar valores “mágicos” para cor, espaçamento, tipografia, raio de borda ou z-index sem passar pelos **tokens** do projeto (`var(--nfse-*)` e utilitários em `src/tokens/`).
+- Se faltar token, **estender o tema** ou usar variável existente — não fixar `#hex` ou `16px` soltos sem alinhamento ao DS.
+
+## Mobile first
+
+- Estilos **base** para viewport estreita (mobile).
+- **Media queries de layout**: preferir **`min-width`** para escalar rumo a tablet/desktop (abordagem ascendente).
+- **Evitar** `@media (max-width: …)` para definir breakpoints de layout; reservar exceções raras e documentadas.
+
+## max-width (quando é permitido)
+
+- **Não** confundir com breakpoints:
+  - **Permitido e comum**: `max-width: 100%`, largura máxima de **layout** com token (ex.: `var(--nfse-layout-max-width)`), ou `min(90vw, …)` em overlays/modais — são limites de caixa, não “desktop first”.
+- **Flexbox / Grid** com unidades relativas (`%`, `rem`, `gap`, `fr`) quando possível.
+
+## Interação
+
+- Áreas tocáveis: respeitar **`--nfse-touch-target-min`** (ou equivalente documentado) para alvos mínimos em mobile.
+- **Hover**: lembrar que touch não tem hover — não depender só de `:hover` para informação essencial.

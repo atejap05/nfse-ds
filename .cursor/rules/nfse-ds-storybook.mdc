@@ -1,0 +1,20 @@
+---
+description: Storybook — meta, stories e a11y no nfse-ds
+globs: "**/*.stories.tsx"
+alwaysApply: false
+---
+
+# Storybook
+
+## Export default
+
+- **`export default meta`** é o padrão esperado do Storybook — **permitido** e desejável nos arquivos `*.stories.tsx`.
+
+## Conteúdo das stories
+
+- Cobrir **variantes** principais do componente (`args` / sub-stories) e estados importantes (disabled, erro, vazio).
+- Quando o componente for interativo ou crítico para fluxo, incluir notas ou parâmetros que ajudem **acessibilidade** (addons de a11y já configurados no projeto).
+
+## Imports
+
+- Importar componentes da biblioteca de forma alinhada ao **barrel** `src/index.ts` ou caminhos relativos consistentes com o restante do repo.

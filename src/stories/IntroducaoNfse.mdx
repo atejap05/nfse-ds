@@ -1,0 +1,55 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="NFS-e/Introdução NFS-e" />
+
+# Introdução NFS-e
+
+Bem-vindo ao **Storybook** do Design System **nfse-ds**, biblioteca de interface React para fluxos da **Nota Fiscal de Serviço eletrônica (NFS-e)** no portal da Receita Federal. Este espaço segue a ideia de portais como o [Fluent UI React Storybook](https://storybooks.fluentui.dev/react/?path=/docs/concepts-introduction--docs): além de pré-visualizar componentes, encontra aqui **contexto**, **orientações de integração** e ligação aos **tokens** e ao manual em `docs/`.
+
+## O que é o nfse-ds
+
+- **Componentes React 19** com TypeScript estrito, estilos com **CSS Modules** e primitivos acessíveis (**Radix UI** onde aplicável).
+- **Tokens de design** (`--nfse-*`) centralizados em `theme.css` e espelhados para consumo com Tailwind em `nfse-tailwind.css`, quando o produto consumidor usar Tailwind.
+- **Foco em acessibilidade** (eMAG / WCAG 2.1): use o addon **Accessibility** nas stories para validar contraste e roles.
+
+O pacote publicável expõe entradas npm para JS/TS e folhas de estilo; o arranque rápido está no `README.md` na raiz do repositório.
+
+## Como navegar neste Storybook
+
+| Secção | Conteúdo |
+| ------ | -------- |
+| **NFS-e** | Visão geral, layouts de exemplo, receitas e esta introdução. |
+| **Components** | Biblioteca de componentes com histórias por cenário e, onde existir, **Autodocs** (tabela de props gerada a partir dos tipos). |
+| **Componentes** (nome em PT em algumas stories) | Mesmo padrão; a equipa pode alinhar títulos ao longo do tempo. |
+
+Em cada documentação de componente, prefira ler a **descrição** no topo (Markdown), experimentar os **controles** e consultar o separador **Docs** para a tabela de propriedades.
+
+## Storybook e o manual `docs/`
+
+| Canal | Quando usar |
+| ----- | ----------- |
+| **Storybook** | Variantes, estados, integração visual, addon a11y e exemplos executáveis. |
+| **`docs/`** no repositório | Arquitetura, roadmap, contratos npm, RFCs e guias que mudam pouco. |
+
+O guia `docs/storybook-documentation.md` descreve padrões obrigatórios (Autodocs, `parameters.docs.description`, MDX para páginas conceito).
+
+## Tokens e tema
+
+Importe no aplicativo consumidor:
+
+- `nfse-ds/theme.css` (ou `theme-fonts.css` + `theme.css`, conforme o README);
+- variáveis como `--nfse-color-primary`, `--nfse-layout-max-width`, `--nfse-sidebar-width`, `--nfse-color-heading` para hierarquia de títulos.
+
+Títulos **H1/H2** usam a cor semântica de cabeçalho; detalhes em **Typography** e no tema.
+
+## Layout com cabeçalho e sidebar
+
+Em aplicações com **barra lateral**, o cabeçalho deve partilhar a **mesma coluna** que a área principal (grelha app shell), para alinhar margens com o `main`. Veja a story **Layouts — App shell** e o manual `docs/layout-examples.md`.
+
+## Próximos passos
+
+Consulte `docs/roadmap.md` para evolução planejada (documentação rica, refinamentos visuais com tokens, etc.). Sugestões e contribuições seguem o fluxo do repositório (issues, merge requests).
+
+---
+
+*Documento gerado como página MDX no Storybook; o conteúdo normativo de produto continua em `docs/product-requirements.md`.*

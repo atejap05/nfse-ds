@@ -112,3 +112,59 @@
   border: 1px solid var(--nfse-border-color);
   box-sizing: border-box;
 }
+
+/*
+ * App shell: grelha sidebar | coluna (header + main).
+ * O Header fica só na coluna de conteúdo — o HeaderInner alinha ao main, não à viewport inteira.
+ */
+.appShell {
+  display: grid;
+  grid-template-columns: var(--nfse-sidebar-width) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.appShellSidebar {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.appShellSidebar > * {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.appShellMainColumn {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+
+.appShellMain {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
+  max-width: var(--nfse-layout-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding: var(--nfse-space-6);
+  padding-left: max(var(--nfse-layout-gutter), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--nfse-layout-gutter), env(safe-area-inset-right, 0px));
+  box-sizing: border-box;
+  background: var(--nfse-color-gray-light);
+  font-family: var(--nfse-font-sans);
+  color: var(--nfse-color-text);
+}
+
+.appShellMain p {
+  margin: 0 0 var(--nfse-space-4);
+  line-height: 1.5;
+}

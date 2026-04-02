@@ -5,6 +5,14 @@ const meta = {
   title: 'Componentes/Button',
   component: Button,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Botões com variantes **primary**, **secondary** e **ghost**; tokens de espaçamento e foco em `src/tokens/`. Padrões de documentação no Storybook: `docs/storybook-documentation.md`.',
+      },
+    },
+  },
   argTypes: {
     variant: { control: 'select', options: ['primary', 'secondary', 'ghost'] },
     size: { control: 'select', options: ['sm', 'md', 'lg'] },

@@ -11,8 +11,8 @@ Este diretório reúne a **documentação técnica** do repositório: arquitetur
 
 | Recurso | Quando usar |
 |--------|----------------|
-| **Storybook** (`npm run dev`) | Explorar componentes, variantes, controles e acessibilidade (addon a11y) em tempo real. |
-| **`docs/`** (esta pasta) | Entender decisões de arquitetura, estrutura de pastas, tecnologias, planejamento futuro e publicação npm. |
+| **Storybook** (`npm run dev`) | Portal de componentes: variantes, Autodocs, integração e acessibilidade (addon a11y). Entrada narrativa: página **Introdução NFS-e** (`src/stories/IntroducaoNfse.mdx`). Ver [storybook-documentation.md](storybook-documentation.md). |
+| **`docs/`** (esta pasta) | Decisões de arquitetura, estrutura de pastas, tecnologias, planejamento futuro e publicação npm. |
 | **[README raiz](../README.md)** | Início rápido: instalação, scripts, imports em React e Next.js. |
 
 ## Índice
@@ -22,6 +22,7 @@ Este diretório reúne a **documentação técnica** do repositório: arquitetur
 3. [Tecnologia](technology.md) — stack, integração Tailwind, Context7 e skill frontend-design.
 4. [Roadmap](roadmap.md) — fases entregues, backlog residual, **revisão manual** e **layouts de exemplo** integrados.
 5. [Pacote npm](npm-package.md) — visão de publicação, `exports` e versionamento.
+6. [Documentação no Storybook](storybook-documentation.md) — modelo de portal (Autodocs, MDX, boas práticas).
 
 ## Documentos relacionados
 

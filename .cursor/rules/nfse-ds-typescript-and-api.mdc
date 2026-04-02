@@ -1,0 +1,38 @@
+---
+description: TypeScript — tipagem estrita, props e JSDoc no nfse-ds
+globs:
+  - src/**/*.ts
+  - src/**/*.tsx
+alwaysApply: false
+---
+
+# TypeScript e API pública
+
+## Tipagem estrita
+
+- **Proibido** usar `any` ou `@ts-ignore` / `@ts-expect-error` sem justificativa documentada em comentário mínimo (preferir corrigir o tipo).
+- Respeitar `strict`, `noUnusedLocals` e `noUnusedParameters` do projeto.
+
+## Interfaces de props
+
+- Nomear como **`[NomeDoComponente]Props`** (ex.: `ButtonProps`, `TextFieldProps`).
+- **Estender** atributos nativos quando fizer sentido:
+  - `React.ComponentPropsWithoutRef<'button'>` / `ComponentPropsWithRef<'div'>` **ou**
+  - tipos específicos como `ButtonHTMLAttributes<HTMLButtonElement>`, `HTMLAttributes<HTMLElement>`, etc.
+- Assim o componente aceita `id`, `className`, handlers e demais atributos padrão de forma tipada.
+
+## JSDoc
+
+- Em interfaces **`Props` exportadas** (API pública da biblioteca), usar **JSDoc conciso** nas propriedades não óbvias — melhora autocomplete, Storybook e consumo externo.
+
+## Exemplo
+
+```tsx
+/** Variante visual do botão. */
+variant?: ButtonVariant;
+```
+
+## Arquivos de tipos
+
+- Padrão do repo: tipos **no mesmo arquivo** que o componente (`Componente.tsx`).
+- Criar `Componente.types.ts` **só** se os tipos ficarem grandes ou forem reutilizados entre vários arquivos.

@@ -1,0 +1,51 @@
+---
+description: React — componentes, exports, forwardRef e Radix no nfse-ds
+globs: src/components/**/*.tsx
+alwaysApply: false
+---
+
+# Componentes React
+
+## Exports
+
+- **`export` nomeado** para componentes e tipos públicos (`export const Button`, `export type ButtonProps`).
+- **`export default`** só onde o ecossistema exige (ex.: `*.stories.tsx` com `export default meta`) — não usar na API da biblioteca.
+
+## Componentes funcionais
+
+- Usar **apenas componentes funcionais**.
+- Com **`forwardRef`**, usar **função nomeada** interna (padrão do projeto — melhor `displayName` e stacks):
+
+```tsx
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(props, ref) {
+  // ...
+});
+```
+
+- Componentes **sem** ref podem ser `function` ou arrow; evitar classes.
+
+## forwardRef
+
+- Primitivos expostos ao consumidor (**botão**, **input**, **container** que repassa DOM, etc.) devem usar **`React.forwardRef`** para permitir medir, focar e integrar libs.
+
+## Estrutura de pastas (canônica)
+
+- `Componente/Componente.tsx`
+- `Componente/Componente.module.css`
+- `Componente/Componente.stories.tsx`
+- `Componente/Componente.test.tsx` quando houver testes (Vitest) — colocated.
+
+## Composição e estado
+
+- Priorizar **componentes de apresentação**: evitar `useEffect` e **fetch** em componentes base da lib.
+- **Formulários**: suportar **controlado e não controlado** quando aplicável (`value` + `onChange` vs `defaultValue`).
+- **`React.memo` / `useMemo` / `useCallback`**: só com necessidade medida (custo real ou referências estáveis em deps).
+
+## Radix e composição
+
+- Onde o projeto já usa Radix, **não duplicar** lógica de acessibilidade que o primitive já resolve.
+- Triggers e fechamentos: preferir padrão **`asChild`** do Radix quando combinar com componente filho customizado (alinhado às stories existentes).
+
+## Polimorfismo
+
+- Tipografia / containers genéricos: prop **`as`** (ou equivalente) para mudar a tag sem perder estilo — ver `Typography` no repo.

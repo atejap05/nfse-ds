@@ -20,6 +20,12 @@ const meta = {
   title: 'Components/Header',
   parameters: {
     layout: 'fullscreen',
+    docs: {
+      description: {
+        component:
+          'Cabeçalho de aplicação com `HeaderInner` centrado até `--nfse-layout-max-width`. Em layouts com **sidebar**, coloque o `Header` na mesma coluna que o `main` (grelha app shell) para alinhar as margens — ver `docs/layout-examples.md` e a story **Layouts — App shell**.',
+      },
+    },
   },
 } satisfies Meta;
 

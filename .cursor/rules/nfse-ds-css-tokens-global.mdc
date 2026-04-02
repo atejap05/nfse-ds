@@ -1,0 +1,12 @@
+---
+description: Tokens globais — arquivos CSS em src/tokens
+globs: src/tokens/**/*.css
+alwaysApply: false
+---
+
+# Tokens globais (`src/tokens`)
+
+- Manter **fonte única de verdade** para variáveis compartilhadas: cores semânticas, espaçamento, tipografia, raios, sombras, z-index.
+- Alterações em tokens impactam **toda** a lib e consumidores — preferir **nomes semânticos** (`--nfse-color-*`, `--nfse-space-*`) e documentar breaking changes no changelog quando aplicável.
+- Evitar duplicar o mesmo valor literal em vários arquivos; **centralizar** e referenciar com `var()`.
+- Alinhar novos tokens ao que já existe em `theme.css`, `utilities.css` e integrações Tailwind em `nfse-tailwind.css` quando couber.

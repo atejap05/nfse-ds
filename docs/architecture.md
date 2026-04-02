@@ -60,7 +60,8 @@ Alterações de marca devem ser feitas primeiro nos tokens e replicadas de forma
 
 ### 5. Storybook
 
-- Ambiente de desenvolvimento e documentação viva: stories por componente, addon **a11y**, página **Design System Overview**.
+- Ambiente de desenvolvimento e **portal de documentação** (variantes, Autodocs, integração), não só canvas visual — ver [storybook-documentation.md](storybook-documentation.md).
+- Stories por componente, addon **a11y**, páginas agregadas (**NFS-e / Design System Overview**, **Layouts**, **Recipes**).
 - O preview importa os mesmos tokens que a biblioteca, garantindo paridade visual com o pacote publicado.
 
 ## Princípios

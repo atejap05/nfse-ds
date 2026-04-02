@@ -22,6 +22,7 @@
   --color-nfse-error-bg: #ffebee;
   --color-nfse-info: #1a3b7e;
   --color-nfse-info-bg: #e8eef9;
+  --color-nfse-heading: var(--nfse-color-heading);
 
   --spacing-nfse-1: 0.25rem;
   --spacing-nfse-2: 0.5rem;
@@ -43,9 +44,12 @@
   --z-nfse-modal: var(--nfse-z-modal);
   --z-nfse-toast: var(--nfse-z-toast);
 
-  /* Breakpoints alinhados a theme.css (--nfse-breakpoint-*) — usar sm: md: lg: xl: */
+  /* Breakpoints alinhados a theme.css; usar prefixos sm md lg xl */
   --breakpoint-sm: 40rem;
   --breakpoint-md: 48rem;
   --breakpoint-lg: 64rem;
   --breakpoint-xl: 80rem;
+
+  /* Largura da sidebar: mesmo valor que theme.css (token nfse-sidebar-width) */
+  --width-nfse-sidebar: var(--nfse-sidebar-width);
 }

@@ -21,6 +21,7 @@ const variantClass: Record<TextVariant, string> = {
 };
 
 export interface TypographyProps extends HTMLAttributes<HTMLElement> {
+  /** H1/H2 usam `var(--nfse-color-heading)`; demais variantes, cores de texto dos tokens. */
   variant: TextVariant;
   children: ReactNode;
   as?: ElementType;

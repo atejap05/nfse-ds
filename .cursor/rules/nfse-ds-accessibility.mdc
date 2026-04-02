@@ -1,0 +1,26 @@
+---
+description: Acessibilidade — semântica, ARIA, teclado e foco no nfse-ds
+globs: src/components/**/*.tsx
+alwaysApply: false
+---
+
+# Acessibilidade (a11y)
+
+## Semântica
+
+- Preferir **HTML semântico** (`button`, `nav`, `aside`, `dialog`, `main`, headings em ordem) em vez de `div` genéricos para interação ou estrutura.
+- Evitar “div soup” quando um elemento nativo resolve o papel.
+
+## ARIA
+
+- Usar **`aria-*`** quando o visual ou o comportamento customizado não for óbvio para leitores de tela (tabs, modais compostos, acordeões customizados).
+- Com **Radix**, aproveitar atributos e ids gerenciados pelo primitive antes de duplicar ARIA manualmente.
+
+## Teclado e foco
+
+- Componentes interativos devem ser **operáveis por teclado** (foco, `Enter`/`Space` em botões, `Escape` onde o padrão exige).
+- Manter **indicador de foco visível** — em geral `:focus-visible`. **Não** remover `outline` sem substituto visível claro e consistente com o DS.
+
+## Testes e Storybook
+
+- Documentar estados relevantes nas stories; o projeto usa `@storybook/addon-a11y` — novas UIs devem ser verificáveis com essa ferramenta.

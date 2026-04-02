@@ -43,6 +43,10 @@ Barrel exports centralizados em `src/index.ts` — novos componentes públicos d
 - **`src/tokens/`**: única área para definição de tokens; `typography.module.css` apoia o componente `Typography`.
 - **`.storybook/preview.ts`**: import global de `theme-fonts.css` e `theme.css` para todas as stories.
 
+### Documentação no Storybook
+
+Padrões de Autodocs, MDX e texto explicativo por componente estão descritos em [storybook-documentation.md](storybook-documentation.md).
+
 ## Artefatos de build (`dist/`)
 
 Após `npm run build`:

@@ -28,6 +28,14 @@ const preview: Preview = {
     docs: {
       toc: true,
     },
+    options: {
+      storySort: {
+        order: [
+          'NFS-e',
+          ['Introdução NFS-e', 'Design System Overview', 'Layouts', 'Recipes'],
+        ],
+      },
+    },
   },
 };
 

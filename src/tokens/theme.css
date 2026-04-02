@@ -34,6 +34,9 @@
   --nfse-color-info: #1a3b7e;
   --nfse-color-info-bg: #e8eef9;
 
+  /* Títulos de destaque (H1/H2 em Typography) — identidade verde NFS-e */
+  --nfse-color-heading: var(--nfse-color-primary);
+
   /* Tipografia — Roboto (carregada em theme-fonts.css) */
   --nfse-font-sans: 'Roboto', system-ui, sans-serif;
 
@@ -75,6 +78,9 @@
    * Manter Header e área principal alinhados no mesmo eixo em app shell.
    */
   --nfse-layout-max-width: 90rem;
+
+  /* Largura base da coluna de navegação lateral (Sidebar); layouts em flex/grid devem permitir min-width: 0 no main */
+  --nfse-sidebar-width: 16rem;
 
   /* Gutter horizontal: mobile mais apertado; md+ alarga (ver @media) */
   --nfse-layout-gutter: var(--nfse-space-3);
