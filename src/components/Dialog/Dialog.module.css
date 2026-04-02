@@ -24,14 +24,19 @@
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: var(--nfse-z-modal);
+  box-sizing: border-box;
   width: min(90vw, 28rem);
+  max-width: min(100vw - var(--nfse-space-4), 28rem);
   max-height: min(85vh, 40rem);
   overflow: auto;
   background-color: var(--nfse-color-white);
   border: var(--nfse-border-width) solid var(--nfse-border-color);
   border-radius: var(--nfse-radius-lg);
   box-shadow: 0 1rem 2rem rgba(26, 59, 126, 0.15);
-  padding: var(--nfse-space-3) var(--nfse-space-4) var(--nfse-space-5);
+  padding-top: var(--nfse-space-3);
+  padding-bottom: var(--nfse-space-5);
+  padding-left: max(var(--nfse-space-4), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--nfse-space-4), env(safe-area-inset-right, 0px));
   font-family: var(--nfse-font-sans);
 }
 

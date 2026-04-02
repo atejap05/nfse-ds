@@ -10,7 +10,7 @@ O `nfse-ds` está preparado para ser **publicado como pacote** (npm público, Gi
 | `version` | [Semver](https://semver.org/) — ex.: `0.1.0`, depois `1.0.0` para primeira versão estável. |
 | `main` / `module` | Ponto de entrada ESM: `./dist/index.js`. |
 | `types` | Tipos TypeScript: `./dist/index.d.ts`. |
-| `exports` | Subpaths: entrada principal, `./theme.css`, `./theme-fonts.css`, `./nfse-tailwind.css`. |
+| `exports` | Subpaths: entrada principal, `./theme.css`, `./theme-fonts.css`, `./utilities.css`, `./nfse-tailwind.css`. |
 | `files` | Apenas `dist` é empacotado por padrão — evita enviar `src/` ao registry. |
 | `peerDependencies` | `react` e `react-dom` ^19 — o app hospedeiro fornece essas versões. |
 
@@ -23,7 +23,7 @@ npm run build
 Gera `dist/` com:
 
 - `index.js`, `index.css`, `index.js.map`
-- `theme.css`, `theme-fonts.css`, `nfse-tailwind.css` (na raiz de `dist/` após o script de flatten)
+- `theme.css`, `theme-fonts.css`, `utilities.css`, `nfse-tailwind.css` (na raiz de `dist/` após o script de flatten)
 - Declarações `.d.ts` e mapas
 
 Validações recomendadas:
@@ -51,6 +51,7 @@ npm install nfse-ds
 ```tsx
 import 'nfse-ds/theme-fonts.css';
 import 'nfse-ds/theme.css';
+import 'nfse-ds/utilities.css';
 import { Button } from 'nfse-ds';
 ```
 

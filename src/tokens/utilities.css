@@ -1,0 +1,25 @@
+/**
+ * Utilitários globais NFS-e (classes não hasheadas).
+ * Importar após theme.css. Export: nfse-ds/utilities.css
+ */
+
+/* Oculta visualmente abaixo de md; a partir de md o display vem do componente */
+/* 48rem = --nfse-breakpoint-md */
+@media not all and (min-width: 48rem) {
+  .nfse-u-hidden-below-md {
+    display: none !important;
+  }
+}
+
+/* Conteúdo só para leitores de ecrã */
+.nfse-u-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

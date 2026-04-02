@@ -4,6 +4,8 @@
   align-items: center;
   justify-content: center;
   gap: var(--nfse-space-2);
+  max-width: 100%;
+  padding-inline: var(--nfse-space-1);
   font-family: var(--nfse-font-sans);
 }
 
@@ -11,9 +13,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 2.25rem;
-  min-height: 2.25rem;
+  min-width: max(2.25rem, var(--nfse-touch-target-min));
+  min-height: max(2.25rem, var(--nfse-touch-target-min));
   padding: var(--nfse-space-2) var(--nfse-space-3);
+  box-sizing: border-box;
   font-size: var(--nfse-text-caption-size);
   font-weight: 500;
   color: var(--nfse-color-navy);

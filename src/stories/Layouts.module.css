@@ -1,0 +1,114 @@
+.avatarTrigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--nfse-touch-target-min);
+  min-height: var(--nfse-touch-target-min);
+  padding: 0;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.avatarTrigger:focus-visible {
+  outline: var(--nfse-focus-ring);
+  outline-offset: var(--nfse-focus-offset);
+}
+
+/* Persona + Dropdown no Header: botão invisível envolvendo o bloco */
+.headerPersonaTrigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: min(18rem, 100%);
+  min-width: max(var(--nfse-touch-target-min), min(18rem, 100%));
+  min-height: var(--nfse-touch-target-min);
+  padding: var(--nfse-space-1) var(--nfse-space-2);
+  margin: 0;
+  border: none;
+  border-radius: var(--nfse-radius-md);
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+@media not all and (min-width: 48rem) {
+  .headerPersonaTrigger {
+    max-width: none;
+    min-width: var(--nfse-touch-target-min);
+    padding: var(--nfse-space-1);
+  }
+}
+
+.headerPersonaTrigger:hover {
+  background: var(--nfse-color-info-bg);
+}
+
+.headerPersonaTrigger:focus-visible {
+  outline: var(--nfse-focus-ring);
+  outline-offset: var(--nfse-focus-offset);
+}
+
+.scrollRegion {
+  height: 70vh;
+  overflow: auto;
+  padding: var(--nfse-space-6);
+  background: var(--nfse-color-gray-light);
+}
+
+.scrollRegion p {
+  margin: 0 0 var(--nfse-space-4);
+  color: var(--nfse-color-text);
+  font-family: var(--nfse-font-sans);
+  line-height: 1.5;
+}
+
+/* Navegação: inline a partir de md; Sheet em mobile */
+.navDesktop {
+  display: none;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--nfse-space-2);
+}
+
+@media (min-width: 48rem) {
+  .navDesktop {
+    display: flex;
+  }
+}
+
+.navMobile {
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 48rem) {
+  .navMobile {
+    display: none;
+  }
+}
+
+.sheetNav {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--nfse-space-2);
+}
+
+.sheetNavButton {
+  justify-content: flex-start;
+}
+
+.viewportMobile375 {
+  width: 100%;
+  max-width: 375px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid var(--nfse-border-color);
+  box-sizing: border-box;
+}

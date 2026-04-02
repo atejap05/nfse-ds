@@ -12,7 +12,9 @@
 
 .wrapper {
   width: 100%;
+  max-width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   font-family: var(--nfse-font-sans);
 }
 

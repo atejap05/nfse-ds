@@ -16,7 +16,10 @@ Objetivo: oferecer no **Storybook** páginas ou stories de **nível de aplicaç�
 ## Relação com o que já existe
 
 - **NFS-e / Recipes** (`src/stories/Recipes.stories.tsx`): receitas pontuais de composição (barra + menu, tabela + tooltip, sheet, dialog + combobox).
+- **NFS-e / Layouts** (`src/stories/Layouts.stories.tsx`): templates nomeados; o **Header** usa o componente composto exportado pelo pacote (`Header`, `HeaderInner`, … em `src/components/Header/`), com playground em **Components/Header** no Storybook.
+- **Persona** (`src/components/Persona/`): `Avatar` + nome + descrição opcional; playground em **Components/Persona**; em **NFS-e / Layouts**, exemplos de **Header** com Persona no menu (barra superior).
 - Esta etapa **amplia** para layouts mais completos e nomeados, reutilizando os mesmos princípios ([z-index.md](z-index.md), tokens, a11y).
+- Largura da coluna de página: `Container` e `HeaderInner` compartilham o token `--nfse-layout-max-width` em `theme.css` para manter o cabeçalho alinhado ao conteúdo principal.
 
 ## Critérios de pronto (por template)
 

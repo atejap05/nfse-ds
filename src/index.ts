@@ -1,5 +1,6 @@
 import './tokens/theme-fonts.css';
 import './tokens/theme.css';
+import './tokens/utilities.css';
 
 export { Button, type ButtonProps, type ButtonSize, type ButtonVariant } from './components/Button/Button';
 export { TextField, type TextFieldProps } from './components/TextField/TextField';
@@ -158,3 +159,42 @@ export {
   type CommandGroupProps,
   type CommandItemProps,
 } from './components/Command/Command';
+
+export {
+  Header,
+  HeaderInner,
+  HeaderRow,
+  HeaderBrand,
+  HeaderLogo,
+  HeaderTitles,
+  HeaderTitle,
+  HeaderSubtitle,
+  HeaderNav,
+  HeaderActions,
+  HeaderSeparator,
+  type HeaderProps,
+  type HeaderInnerProps,
+  type HeaderRowProps,
+  type HeaderBrandProps,
+  type HeaderLogoProps,
+  type HeaderTitlesProps,
+  type HeaderTitleProps,
+  type HeaderSubtitleProps,
+  type HeaderNavProps,
+  type HeaderActionsProps,
+  type HeaderSeparatorProps,
+  type HeaderVariantName,
+} from './components/Header/Header';
+
+export {
+  Persona,
+  PersonaAvatar,
+  PersonaText,
+  PersonaName,
+  PersonaDescription,
+  type PersonaProps,
+  type PersonaAvatarProps,
+  type PersonaTextProps,
+  type PersonaNameProps,
+  type PersonaDescriptionProps,
+} from './components/Persona/Persona';

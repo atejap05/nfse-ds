@@ -14,6 +14,7 @@
     },
     "./theme.css": "./dist/theme.css",
     "./theme-fonts.css": "./dist/theme-fonts.css",
+    "./utilities.css": "./dist/utilities.css",
     "./nfse-tailwind.css": "./dist/nfse-tailwind.css"
   },
   "files": [

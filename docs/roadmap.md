@@ -168,7 +168,7 @@ Escopo planejado (detalhe em [layout-examples.md](layout-examples.md)):
 
 **Onde implementar:** preferencialmente novas stories em `src/stories/` (ex.: grupo **NFS-e / Layouts** ou subpastas por template), reutilizando tokens e padrões das Recipes.
 
-**Status:** não iniciada como conjunto nomeado; Recipes já cobrem parte da integração — esta etapa consolida layouts completos e documentados.
+**Status:** em andamento — **Header** e **Persona** entregues como componentes (`src/components/Header/`, `src/components/Persona/`) com stories em **NFS-e / Layouts**; demais templates (sidebar, navbar, tabela, app shell) pendentes. Recipes continuam cobrindo parte da integração pontual.
 
 ---
 

@@ -23,7 +23,8 @@
   z-index: var(--nfse-z-modal);
   display: flex;
   flex-direction: column;
-  max-height: 100vh;
+  box-sizing: border-box;
+  max-height: min(100vh, 100dvh);
   background-color: var(--nfse-color-white);
   border: var(--nfse-border-width) solid var(--nfse-border-color);
   font-family: var(--nfse-font-sans);
@@ -41,7 +42,8 @@
   right: 0;
   max-height: 85vh;
   border-radius: 0 0 var(--nfse-radius-lg) var(--nfse-radius-lg);
-  padding: var(--nfse-space-4);
+  padding: max(var(--nfse-space-4), env(safe-area-inset-top, 0px)) max(var(--nfse-space-4), env(safe-area-inset-right, 0px))
+    var(--nfse-space-4) max(var(--nfse-space-4), env(safe-area-inset-left, 0px));
 }
 
 .sideBottom {
@@ -50,7 +52,8 @@
   right: 0;
   max-height: 85vh;
   border-radius: var(--nfse-radius-lg) var(--nfse-radius-lg) 0 0;
-  padding: var(--nfse-space-4);
+  padding: var(--nfse-space-4) max(var(--nfse-space-4), env(safe-area-inset-right, 0px))
+    max(var(--nfse-space-4), env(safe-area-inset-bottom, 0px)) max(var(--nfse-space-4), env(safe-area-inset-left, 0px));
 }
 
 .sideLeft {
@@ -59,7 +62,8 @@
   left: 0;
   width: min(100vw, 22rem);
   border-radius: 0 var(--nfse-radius-lg) var(--nfse-radius-lg) 0;
-  padding: var(--nfse-space-4);
+  padding: max(var(--nfse-space-4), env(safe-area-inset-top, 0px)) max(var(--nfse-space-4), env(safe-area-inset-right, 0px))
+    max(var(--nfse-space-4), env(safe-area-inset-bottom, 0px)) max(var(--nfse-space-4), env(safe-area-inset-left, 0px));
 }
 
 .sideRight {
@@ -68,7 +72,8 @@
   right: 0;
   width: min(100vw, 22rem);
   border-radius: var(--nfse-radius-lg) 0 0 var(--nfse-radius-lg);
-  padding: var(--nfse-space-4);
+  padding: max(var(--nfse-space-4), env(safe-area-inset-top, 0px)) max(var(--nfse-space-4), env(safe-area-inset-right, 0px))
+    max(var(--nfse-space-4), env(safe-area-inset-bottom, 0px)) max(var(--nfse-space-4), env(safe-area-inset-left, 0px));
 }
 
 .content[data-state='open'].sideTop {

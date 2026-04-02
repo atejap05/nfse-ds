@@ -3,18 +3,32 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--nfse-space-4);
-  padding: var(--nfse-space-4) var(--nfse-space-6);
+  padding: var(--nfse-space-4) max(var(--nfse-space-6), env(safe-area-inset-right, 0px)) var(--nfse-space-4)
+    max(var(--nfse-space-6), env(safe-area-inset-left, 0px));
   border-bottom: var(--nfse-border-width) solid var(--nfse-border-color);
   background: var(--nfse-color-white);
+  box-sizing: border-box;
+}
+
+@media not all and (min-width: 48rem) {
+  .bar {
+    padding: var(--nfse-space-3) max(var(--nfse-space-4), env(safe-area-inset-right, 0px)) var(--nfse-space-3)
+      max(var(--nfse-space-4), env(safe-area-inset-left, 0px));
+  }
 }
 
 .avatarTrigger {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--nfse-touch-target-min);
+  min-height: var(--nfse-touch-target-min);
   padding: 0;
   border: none;
   background: transparent;
   border-radius: 50%;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .avatarTrigger:focus-visible {

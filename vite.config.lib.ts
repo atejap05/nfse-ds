@@ -17,6 +17,7 @@ export default defineConfig({
       targets: [
         { src: 'src/tokens/theme.css', dest: '.', rename: 'theme.css' },
         { src: 'src/tokens/theme-fonts.css', dest: '.', rename: 'theme-fonts.css' },
+        { src: 'src/tokens/utilities.css', dest: '.', rename: 'utilities.css' },
         { src: 'src/tokens/nfse-tailwind.css', dest: '.', rename: 'nfse-tailwind.css' },
       ],
     }),

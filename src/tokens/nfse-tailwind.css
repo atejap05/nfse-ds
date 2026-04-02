@@ -2,7 +2,7 @@
  * NFS-e — extensão de tema para Tailwind CSS v4.
  * No app Next.js: após @import "tailwindcss" no globals.css, importe este arquivo
  * ou copie o bloco @theme para o seu CSS global.
- * Manter valores alinhados a theme.css.
+ * Manter valores alinhados a theme.css (breakpoints idênticos).
  */
 @theme {
   --font-sans: var(--nfse-font-sans);
@@ -42,4 +42,10 @@
   --z-nfse-overlay: var(--nfse-z-overlay);
   --z-nfse-modal: var(--nfse-z-modal);
   --z-nfse-toast: var(--nfse-z-toast);
+
+  /* Breakpoints alinhados a theme.css (--nfse-breakpoint-*) — usar sm: md: lg: xl: */
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
 }

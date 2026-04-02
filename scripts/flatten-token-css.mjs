@@ -7,7 +7,7 @@ const root = join(__dirname, '..');
 const dist = join(root, 'dist');
 const nested = join(dist, 'src', 'tokens');
 
-const files = ['theme.css', 'theme-fonts.css', 'nfse-tailwind.css'];
+const files = ['theme.css', 'theme-fonts.css', 'utilities.css', 'nfse-tailwind.css'];
 
 for (const file of files) {
   const from = join(nested, file);
