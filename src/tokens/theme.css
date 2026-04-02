@@ -78,7 +78,8 @@
   --nfse-z-base: 0;
   --nfse-z-sticky: 10;
   --nfse-z-dropdown: 1000;
-  --nfse-z-popover: 1010;
+  /* Popover em portal compete com overlay/modal; precisa ficar acima de --nfse-z-modal */
+  --nfse-z-popover: 1110;
   --nfse-z-tooltip: 1020;
   --nfse-z-overlay: 1100;
   --nfse-z-modal: 1101;
