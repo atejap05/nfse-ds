@@ -3,7 +3,7 @@ import { Stack } from '../Stack/Stack';
 import { Typography } from './Typography';
 
 const meta = {
-  title: 'Components/Typography',
+  title: 'Componentes/Typography',
   component: Typography,
   tags: ['autodocs'],
   parameters: {

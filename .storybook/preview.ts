@@ -7,6 +7,8 @@ import './preview.css';
 const preview: Preview = {
   parameters: {
     controls: {
+      expanded: true,
+      sort: 'requiredFirst',
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/i,

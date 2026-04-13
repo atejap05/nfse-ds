@@ -6,9 +6,13 @@ const config: StorybookConfig = {
     '@storybook/addon-vitest',
     '@storybook/addon-a11y',
     '@storybook/addon-docs',
-    '@storybook/addon-mcp'
+    '@storybook/addon-mcp',
   ],
   framework: '@storybook/react-vite',
+  /** Tabelas de props com tipos e comentários JSDoc dos interfaces TypeScript. */
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+  },
 };
 
 export default config;

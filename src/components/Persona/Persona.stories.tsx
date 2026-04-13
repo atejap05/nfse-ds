@@ -9,11 +9,37 @@ import {
 } from './Persona';
 
 const meta = {
-  title: 'Components/Persona',
+  title: 'Componentes/Persona',
+  component: Persona,
+  tags: ['autodocs'],
+  subcomponents: {
+    PersonaAvatar,
+    PersonaText,
+    PersonaName,
+    PersonaDescription,
+  },
   parameters: {
     layout: 'centered',
+    docs: {
+      description: {
+        component: `
+## Composição
+
+1. **\`Persona\`** — contentor flexível; aceita \`aria-label\` para o conjunto.
+2. **\`PersonaAvatar\`** — envolve o \`Avatar\` (ou ícone).
+3. **\`PersonaText\`** — agrupa nome e descrição (\`data-nfse-persona-text\` para responsividade no header).
+4. **\`PersonaName\`** e **\`PersonaDescription\`** — tipografia consistente.
+
+Em listas, pode usar \`aria-hidden\` no \`Avatar\` se o nome estiver visível ao lado, para evitar leitura duplicada.
+`,
+      },
+    },
   },
-} satisfies Meta;
+  argTypes: {
+    children: { control: false, description: 'Conteúdo (normalmente `PersonaAvatar` + `PersonaText`).' },
+    'aria-label': { description: 'Rótulo acessível para o bloco da persona.' },
+  },
+} satisfies Meta<typeof Persona>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

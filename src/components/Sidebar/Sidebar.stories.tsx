@@ -60,17 +60,57 @@ function IconDoc() {
 }
 
 const meta = {
-  title: 'Components/Sidebar',
+  title: 'Componentes/Sidebar',
+  component: Sidebar,
+  tags: ['autodocs'],
+  subcomponents: {
+    SidebarHeader,
+    SidebarNav,
+    SidebarItem,
+    SidebarGroup,
+    SidebarGroupTrigger,
+    SidebarGroupContent,
+    SidebarGroupItem,
+    SidebarItemIcon,
+  },
   parameters: {
     layout: 'fullscreen',
     docs: {
       description: {
-        component:
-          'Navegação lateral com grupos colapsáveis e ícones opcionais. Integra com o padrão de layout em `docs/layout-examples.md` (largura `--nfse-sidebar-width`).',
+        component: `
+## Composição
+
+- **\`Sidebar\`** — raiz (\`aside\` por defeito); estado de item selecionado e categorias abertas (controlado ou não).
+- **\`SidebarHeader\`** — cabeçalho opcional (título, contexto).
+- **\`SidebarNav\`** — lista de navegação (\`aria-label\` obrigatório).
+- **\`SidebarItem\`** — link ou botão; valor único para seleção.
+- **\`SidebarGroup\` + \`SidebarGroupTrigger\` + \`SidebarGroupContent\` + \`SidebarGroupItem\`** — secções colapsáveis.
+- **\`SidebarItemIcon\`** — ícone opcional alinhado ao texto.
+
+**Largura:** token \`--nfse-sidebar-width\`. Integração com layouts em \`docs/layout-examples.md\`.
+`,
       },
     },
   },
-} satisfies Meta;
+  argTypes: {
+    as: { control: false, description: 'Elemento raiz (ex.: aside).' },
+    density: {
+      control: 'select',
+      options: ['default', 'compact'],
+      description: 'Espaçamento vertical entre itens.',
+    },
+    defaultSelectedValue: { description: 'Valor inicial do item selecionado (modo não controlado).' },
+    selectedValue: { description: 'Item selecionado (modo controlado).' },
+    selectedCategoryValue: { description: 'Grupo que contém o item ativo (para realce com grupo fechado).' },
+    defaultOpenCategories: { description: 'IDs de grupos abertos por defeito (não controlado).' },
+    openCategories: { description: 'IDs de grupos abertos (controlado).' },
+    multiple: { description: 'Vários grupos abertos em simultâneo; false = acordeão.' },
+    onItemSelect: { control: false },
+    onOpenCategoriesChange: { control: false },
+    onCategoryToggle: { control: false },
+    children: { control: false, description: 'Árvore de cabeçalho + `SidebarNav` + itens.' },
+  },
+} satisfies Meta<typeof Sidebar>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

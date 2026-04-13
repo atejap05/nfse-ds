@@ -6,7 +6,9 @@ export type ButtonVariant = 'primary' | 'secondary' | 'ghost';
 export type ButtonSize = 'sm' | 'md' | 'lg';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  /** Estilo visual: destaque primário, secundário ou discreto. */
   variant?: ButtonVariant;
+  /** Altura e tipografia do botão. */
   size?: ButtonSize;
 }
 

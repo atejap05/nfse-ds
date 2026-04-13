@@ -14,12 +14,16 @@ O Storybook complementa o manual em `docs/`, não o substitui.
 ## Padrões por componente
 
 1. **`meta` com `tags: ['autodocs']`** quando o componente tiver ficheiro `*.stories.tsx` dedicado — gera documentação com tabela de props a partir dos tipos exportados.
-2. **`parameters.docs.description`** (Markdown) no `meta` ou na story, com:
+2. **`component: MeuComponente`** no `meta` (obrigatório para a página Docs listar props). Em componentes compostos, usar também **`subcomponents`** com as peças exportadas (`HeaderInner`, `SidebarNav`, …).
+3. **`.storybook/main.ts`**: `typescript.reactDocgen: 'react-docgen-typescript'` para preencher a tabela de props a partir de interfaces TypeScript e comentários JSDoc.
+4. **`.storybook/preview.ts`**: `controls.expanded: true` e `controls.sort: 'requiredFirst'` para mostrar todas as props e ordem estável.
+5. **`argTypes`** no `meta` quando for preciso: `description`, `control: false` em callbacks/`children`, ou opções de `select` alinhadas ao tipo.
+6. **`parameters.docs.description`** (Markdown) no `meta` ou na story, com:
    - finalidade do componente;
    - quando usar vs alternativas;
    - referência a tokens (`var(--nfse-*)`) e ficheiros em `docs/` quando útil (ex.: [icons.md](icons.md)).
-3. **Histórias nomeadas** por cenário (`Básico`, `Com erro`, `Compacto`, …), não apenas `Default` genérico, quando fizer sentido.
-4. **Acessibilidade**: validar com o addon **a11y** em estados relevantes (foco, contraste, roles).
+7. **Histórias nomeadas** por cenário (`Básico`, `Com erro`, `Compacto`, …), não apenas `Default` genérico, quando fizer sentido.
+8. **Acessibilidade**: validar com o addon **a11y** em estados relevantes (foco, contraste, roles).
 
 ## MDX e páginas de visão geral
 
