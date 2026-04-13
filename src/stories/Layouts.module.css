@@ -104,6 +104,91 @@
   justify-content: flex-start;
 }
 
+.forceMobileHide {
+  display: none !important;
+}
+
+.forceMobileShowFlex {
+  display: flex !important;
+}
+
+.headerPersonaTriggerMobile {
+  max-width: none;
+  min-width: var(--nfse-touch-target-min);
+  padding: var(--nfse-space-1);
+}
+
+.mobilePreviewScene {
+  display: flex;
+  justify-content: center;
+  padding: var(--nfse-space-8);
+  background: linear-gradient(
+    180deg,
+    var(--nfse-color-info-bg) 0,
+    var(--nfse-color-info-bg) 10rem,
+    var(--nfse-color-white) 10rem,
+    var(--nfse-color-white) 100%
+  );
+  box-sizing: border-box;
+}
+
+.mobilePreviewFrame {
+  width: min(100%, 375px);
+  overflow: hidden;
+  border: 1px solid var(--nfse-border-color);
+  border-radius: var(--nfse-radius-lg);
+  background: var(--nfse-color-white);
+}
+
+.mobilePreviewTopBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--nfse-space-3);
+  padding: var(--nfse-space-3) var(--nfse-space-4);
+  border-bottom: 1px solid var(--nfse-border-color);
+  background: var(--nfse-color-info-bg);
+  color: var(--nfse-color-info);
+  font-family: var(--nfse-font-sans);
+  font-size: var(--nfse-text-caption-size);
+  line-height: var(--nfse-text-caption-line);
+}
+
+.mobilePreviewBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nfse-space-4);
+  padding: var(--nfse-space-4);
+  background: var(--nfse-color-white);
+  color: var(--nfse-color-text);
+  font-family: var(--nfse-font-sans);
+}
+
+.mobilePreviewBody p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.mobilePreviewCards {
+  display: grid;
+  gap: var(--nfse-space-3);
+}
+
+.mobilePreviewCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nfse-space-1);
+  padding: var(--nfse-space-4);
+  border: 1px solid var(--nfse-border-color);
+  border-radius: var(--nfse-radius-md);
+  background: var(--nfse-color-white);
+}
+
+.mobilePreviewCard :global(p),
+.mobilePreviewCard :global(span) {
+  margin: 0;
+}
+
 .viewportMobile375 {
   width: 100%;
   max-width: 375px;
@@ -165,6 +250,22 @@
 }
 
 .appShellMain p {
+  margin: 0 0 var(--nfse-space-4);
+  line-height: 1.5;
+}
+
+/* Conteúdo dentro do <main> do componente AppShell (story) */
+.appShellFullWidthMain {
+  max-width: var(--nfse-layout-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding: var(--nfse-space-6);
+  padding-left: max(var(--nfse-layout-gutter), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--nfse-layout-gutter), env(safe-area-inset-right, 0px));
+  box-sizing: border-box;
+}
+
+.appShellFullWidthMain p {
   margin: 0 0 var(--nfse-space-4);
   line-height: 1.5;
 }

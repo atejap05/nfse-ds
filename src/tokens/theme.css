@@ -14,8 +14,8 @@
   --nfse-breakpoint-xl: 80rem; /* 1280px */
 
   /* Primárias (PRD / overview) */
-  --nfse-color-primary: #0a7a3f;
-  --nfse-color-yellow: #fdb813;
+  --nfse-color-primary: #709e77;
+  --nfse-color-yellow: #fde047;
   --nfse-color-navy: #1a3b7e;
 
   /* Neutros */
@@ -25,7 +25,7 @@
   --nfse-color-text-muted: #606c88;
 
   /* Semânticos */
-  --nfse-color-success: #0a7a3f;
+  --nfse-color-success: #709e77;
   --nfse-color-success-bg: #e8f5ef;
   --nfse-color-warning: #b8860b;
   --nfse-color-warning-bg: #fff8e6;
@@ -33,6 +33,17 @@
   --nfse-color-error-bg: #ffebee;
   --nfse-color-info: #1a3b7e;
   --nfse-color-info-bg: #e8eef9;
+
+  /*
+   * Gráficos — paleta para dashboards (Recharts etc.).
+   * chart-1, chart-2 e chart-4 reutilizam primário, azul marinho e amarelo; demais em OKLCH.
+   * Valores hex espelhados em `src/tokens/chartColors.ts` (props JS não aceitam OKLCH).
+   */
+  --nfse-color-chart-1: var(--nfse-color-primary);
+  --nfse-color-chart-2: var(--nfse-color-navy);
+  --nfse-color-chart-3: oklch(0.6 0.03 265);
+  --nfse-color-chart-4: var(--nfse-color-yellow);
+  --nfse-color-chart-5: oklch(0.769 0.188 70.08);
 
   /* Títulos de destaque (H1/H2 em Typography) — identidade verde NFS-e */
   --nfse-color-heading: var(--nfse-color-primary);
@@ -106,6 +117,8 @@
    */
   --nfse-z-base: 0;
   --nfse-z-sticky: 10;
+  /* Navegação lateral em overlay (mobile); abaixo de dropdowns e acima do conteúdo base */
+  --nfse-z-sidebar: 50;
   --nfse-z-dropdown: 1000;
   /* Popover em portal compete com overlay/modal; precisa ficar acima de --nfse-z-modal */
   --nfse-z-popover: 1110;

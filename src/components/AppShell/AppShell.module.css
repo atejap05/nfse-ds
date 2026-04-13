@@ -1,0 +1,109 @@
+.shell {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: var(--nfse-color-white);
+}
+
+.shellHeader {
+  position: sticky;
+  top: 0;
+  z-index: calc(var(--nfse-z-sidebar) + 1);
+  flex-shrink: 0;
+  width: 100%;
+  min-width: 0;
+}
+
+.shellBody {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/*
+ * Mobile first: sidebar em overlay (fixo, desliza para fora quando fechada).
+ * Desktop (md+): sidebar em fluxo, largura animada para 0 quando fechada.
+ */
+.sidebar {
+  --sidebar-w: var(--shell-sidebar-width, var(--nfse-sidebar-width));
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: min(100vw, var(--sidebar-w));
+  min-width: min(100vw, var(--sidebar-w));
+  z-index: var(--nfse-z-sidebar);
+  background: var(--nfse-color-white);
+  border-right: var(--nfse-border-width) solid var(--nfse-border-color);
+  overflow: hidden;
+  flex-shrink: 0;
+  transition:
+    transform 220ms ease,
+    opacity 200ms ease;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.sidebarClosed {
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebarInner {
+  width: var(--sidebar-w);
+  max-width: min(100vw, var(--sidebar-w));
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.main {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--nfse-color-gray-light);
+  color: var(--nfse-color-text);
+  font-family: var(--nfse-font-sans);
+  outline: none;
+}
+
+@media (min-width: 48rem) {
+  .sidebar {
+    position: relative;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    width: var(--sidebar-w);
+    min-width: var(--sidebar-w);
+    max-width: none;
+    z-index: auto;
+    transform: none;
+    transition:
+      width 220ms ease,
+      min-width 220ms ease,
+      opacity 200ms ease;
+  }
+
+  .sidebarClosed {
+    width: 0;
+    min-width: 0;
+    border-right-width: 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: none;
+  }
+
+  .sidebarInner {
+    min-width: var(--sidebar-w);
+  }
+
+  .sidebarClosed .sidebarInner {
+    min-width: 0;
+  }
+}

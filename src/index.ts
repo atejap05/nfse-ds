@@ -2,6 +2,8 @@ import './tokens/theme-fonts.css';
 import './tokens/theme.css';
 import './tokens/utilities.css';
 
+export { chartColors, type ChartColorName } from './tokens/chartColors';
+
 export { Button, type ButtonProps, type ButtonSize, type ButtonVariant } from './components/Button/Button';
 export { TextField, type TextFieldProps } from './components/TextField/TextField';
 export { TextArea, type TextAreaProps } from './components/TextArea/TextArea';
@@ -185,6 +187,9 @@ export {
   type HeaderSeparatorProps,
   type HeaderVariantName,
 } from './components/Header/Header';
+
+export { AppShell } from './components/AppShell';
+export type { AppShellProps } from './components/AppShell';
 
 export {
   Sidebar,

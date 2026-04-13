@@ -6,6 +6,7 @@ Tokens definidos em `src/tokens/theme.css` e reutilizados nos CSS Modules dos co
 |-------|--------|-----|
 | `--nfse-z-base` | 0 | Conteúdo padrão |
 | `--nfse-z-sticky` | 10 | Cabeçalhos / barras sticky |
+| `--nfse-z-sidebar` | 50 | Navegação lateral em overlay (ex.: `AppShell` em mobile) |
 | `--nfse-z-dropdown` | 1000 | Menus suspensos (`DropdownMenu`) |
 | `--nfse-z-popover` | 1110 | Painéis ancorados (`Popover`, combobox) — acima de overlay/modal para portais no `body` |
 | `--nfse-z-tooltip` | 1020 | Dicas (acima de dropdown; abaixo de popover em empilhamento global) |

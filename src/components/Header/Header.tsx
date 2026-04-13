@@ -19,6 +19,42 @@ export interface HeaderProps extends HTMLAttributes<HTMLElement> {
   variant?: HeaderVariantName;
   /** Cabeçalho fixo ao rolar a página */
   sticky?: boolean;
+  /**
+   * Quando false, o `HeaderInner` limita o conteúdo a `--nfse-layout-max-width` (equivalente ao Container).
+   * Predefinição: true — faixa full-bleed em qualquer layout.
+   */
+  fullWidth?: boolean;
+  /**
+   * Quando true, renderiza o botão de abrir/fechar navegação lateral (anatomia no topo do header,
+   * padrão GOV.BR DS). O estado é controlado por `navigationOpen` e `onNavigationToggle`.
+   */
+  showNavigation?: boolean;
+  /** Estado da navegação lateral (aberta/fechada), para ARIA e rótulo do botão. */
+  navigationOpen?: boolean;
+  /** Chamado ao clicar no botão de navegação lateral. */
+  onNavigationToggle?: () => void;
+  /** ID do painel de navegação controlado (`aria-controls`). */
+  navigationId?: string;
+}
+
+function HeaderMenuIcon() {
+  return (
+    <svg
+      width={18}
+      height={18}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.8}
+      strokeLinecap="round"
+      aria-hidden
+      focusable="false"
+    >
+      <line x1="3" y1="6" x2="21" y2="6" />
+      <line x1="3" y1="12" x2="21" y2="12" />
+      <line x1="3" y1="18" x2="21" y2="18" />
+    </svg>
+  );
 }
 
 export function Header({
@@ -26,15 +62,45 @@ export function Header({
   children,
   variant = 'default',
   sticky = false,
+  fullWidth = true,
+  showNavigation = false,
+  navigationOpen = true,
+  onNavigationToggle,
+  navigationId,
   ...props
 }: HeaderProps) {
+  const navExpanded = navigationOpen;
   return (
     <HeaderVariantContext.Provider value={{ variant }}>
       <header
-        className={cn(styles.root, variant === 'compact' && styles.compact, sticky && styles.sticky, className)}
+        className={cn(
+          styles.root,
+          variant === 'compact' && styles.compact,
+          sticky && styles.sticky,
+          !fullWidth && styles.constrained,
+          className,
+        )}
         {...props}
       >
-        {children}
+        {showNavigation ? (
+          <div className={styles.headerWithNav}>
+            <div className={styles.menuTrigger}>
+              <button
+                type="button"
+                className={styles.menuTriggerBtn}
+                aria-label={navExpanded ? 'Fechar menu lateral' : 'Abrir menu lateral'}
+                aria-expanded={navExpanded}
+                aria-controls={navigationId}
+                onClick={onNavigationToggle}
+              >
+                <HeaderMenuIcon />
+              </button>
+            </div>
+            <div className={styles.headerWithNavRest}>{children}</div>
+          </div>
+        ) : (
+          children
+        )}
       </header>
     </HeaderVariantContext.Provider>
   );
@@ -44,7 +110,7 @@ export interface HeaderInnerProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
 }
 
-/** Conteúdo alinhado à largura máxima do DS (equivalente ao Container). */
+/** Área do cabeçalho com gutters; com `Header` predefinido, ocupa a largura disponível (full-bleed). Use `fullWidth={false}` no `Header` para centrar até `--nfse-layout-max-width`. */
 export function HeaderInner({ className, children, ...props }: HeaderInnerProps) {
   return (
     <div className={cn(styles.inner, className)} {...props}>

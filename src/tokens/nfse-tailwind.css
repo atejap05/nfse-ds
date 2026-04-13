@@ -24,6 +24,12 @@
   --color-nfse-info-bg: #e8eef9;
   --color-nfse-heading: var(--nfse-color-heading);
 
+  --color-nfse-chart-1: var(--nfse-color-chart-1);
+  --color-nfse-chart-2: var(--nfse-color-chart-2);
+  --color-nfse-chart-3: var(--nfse-color-chart-3);
+  --color-nfse-chart-4: var(--nfse-color-chart-4);
+  --color-nfse-chart-5: var(--nfse-color-chart-5);
+
   --spacing-nfse-1: 0.25rem;
   --spacing-nfse-2: 0.5rem;
   --spacing-nfse-3: 0.75rem;
@@ -37,6 +43,7 @@
 
   --z-nfse-base: var(--nfse-z-base);
   --z-nfse-sticky: var(--nfse-z-sticky);
+  --z-nfse-sidebar: var(--nfse-z-sidebar);
   --z-nfse-dropdown: var(--nfse-z-dropdown);
   --z-nfse-popover: var(--nfse-z-popover);
   --z-nfse-tooltip: var(--nfse-z-tooltip);

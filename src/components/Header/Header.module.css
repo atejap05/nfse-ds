@@ -4,6 +4,56 @@
   box-sizing: border-box;
 }
 
+/* Linha do header com trigger + conteúdo (GOV.BR: trigger à esquerda) */
+.headerWithNav {
+  display: flex;
+  align-items: center;
+  gap: var(--nfse-space-3);
+  min-width: 0;
+}
+
+.headerWithNavRest {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Trigger de navegação lateral (padrão GOV.BR: anatomia no header) */
+.menuTrigger {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.menuTriggerBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--nfse-touch-target-min);
+  min-width: var(--nfse-touch-target-min);
+  min-height: var(--nfse-touch-target-min);
+  padding: 0;
+  border: none;
+  border-radius: var(--nfse-radius-md);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.15s ease;
+}
+
+.menuTriggerBtn:hover {
+  background-color: var(--nfse-color-info-bg);
+}
+
+.menuTriggerBtn:focus {
+  outline: none;
+}
+
+.menuTriggerBtn:focus-visible {
+  outline: var(--nfse-focus-ring);
+  outline-offset: var(--nfse-focus-offset);
+}
+
 .sticky {
   position: sticky;
   top: 0;
@@ -22,12 +72,17 @@
 
 .inner {
   width: 100%;
-  max-width: var(--nfse-layout-max-width);
+  max-width: none;
   margin-left: auto;
   margin-right: auto;
   padding-left: max(var(--nfse-layout-gutter), env(safe-area-inset-left, 0px));
   padding-right: max(var(--nfse-layout-gutter), env(safe-area-inset-right, 0px));
   box-sizing: border-box;
+}
+
+/* Opt-in: alinhar ao Container (ex.: shell legado com header na coluna do main) */
+.constrained .inner {
+  max-width: var(--nfse-layout-max-width);
 }
 
 .row {

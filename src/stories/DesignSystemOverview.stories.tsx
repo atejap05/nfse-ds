@@ -19,11 +19,19 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const swatches = [
-  { name: 'Verde principal', token: '--nfse-color-primary', hex: '#0A7A3F' },
-  { name: 'Amarelo', token: '--nfse-color-yellow', hex: '#FDB813' },
+  { name: 'Verde principal', token: '--nfse-color-primary', hex: '#709E77' },
+  { name: 'Amarelo', token: '--nfse-color-yellow', hex: '#FDE047' },
   { name: 'Azul marinho', token: '--nfse-color-navy', hex: '#1A3B7E' },
   { name: 'Cinza claro', token: '--nfse-color-gray-light', hex: '#E0E0E0' },
   { name: 'Texto', token: '--nfse-color-text', hex: '#333333' },
+];
+
+const chartSwatches = [
+  { name: 'Chart 1 (linhas / primário)', token: '--nfse-color-chart-1', hex: '#709E77' },
+  { name: 'Chart 2 (barras / azul marinho)', token: '--nfse-color-chart-2', hex: '#1A3B7E' },
+  { name: 'Chart 3 (grid / muted)', token: '--nfse-color-chart-3', hex: '#777C93' },
+  { name: 'Chart 4 (destaque / KPI)', token: '--nfse-color-chart-4', hex: '#FDE047' },
+  { name: 'Chart 5 (terciário)', token: '--nfse-color-chart-5', hex: '#E67E22' },
 ];
 
 export const Overview: Story = {
@@ -74,7 +82,34 @@ export const Overview: Story = {
               </p>
               <div className={overviewStyles.swatches}>
                 {swatches.map((s) => (
-                  <figure key={s.hex} className={overviewStyles.swatchCard}>
+                  <figure key={s.token} className={overviewStyles.swatchCard}>
+                    <div
+                      className={overviewStyles.swatch}
+                      style={{ background: `var(${s.token})` }}
+                      role="img"
+                      aria-label={s.name}
+                    />
+                    <figcaption>
+                      <strong>{s.name}</strong>
+                      <span className={overviewStyles.swatchMeta}>{s.hex}</span>
+                      <code className={overviewStyles.code}>{s.token}</code>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </section>
+
+            <section aria-labelledby="charts-title">
+              <Typography variant="h2" id="charts-title">
+                Cores para gráficos
+              </Typography>
+              <p className={overviewStyles.sectionIntro}>
+                Tokens `--nfse-color-chart-1` a `--nfse-color-chart-5` para dashboards. Em CSS use `var()`; em
+                Recharts ou outras APIs que exigem string de cor, importe `chartColors` de `nfse-ds`.
+              </p>
+              <div className={overviewStyles.swatches}>
+                {chartSwatches.map((s) => (
+                  <figure key={s.token} className={overviewStyles.swatchCard}>
                     <div
                       className={overviewStyles.swatch}
                       style={{ background: `var(${s.token})` }}
